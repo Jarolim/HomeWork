@@ -1,0 +1,30 @@
+﻿body {
+    margin: 10px;
+}
+
+li {
+    list-style: none;
+}
+
+body ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+ul li ul li a {
+    color: #969799;
+}
+
+ul li ul {
+    display: none;
+}
+
+ul li:hover > ul {
+    display: block;
+    margin-left: 10px;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+    color: black;
+}

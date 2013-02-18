@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Windows Calculator</title>
+    <link href="4.Calculator.css" rel="StyleSheet" type="text/css" />
+</head>
+<body>
+    <div id="calculator">
+        <span id="logo">Calculator</span>
+        <span id="MinimiseClose"></span>
+        <div id="content">
+            <div id="menu">
+                <ul>
+                    <li>View</li>
+                    <li>Edit</li>
+                    <li>Help</li>
+                </ul>
+            </div>
+                <input type="text" id="display" value="0" />
+            <table id="zeros">
+                <tr>
+                    <td>0000</td>
+                    <td>0000</td>
+                    <td>0000</td>
+                    <td>0000</td>
+                    <td>0000</td>
+                    <td>0000</td>
+                    <td>0000</td>
+                    <td>0000</td>
+                </tr>
+                <tr>
+                    <td colspan="4">63</td>
+                    <td colspan="3">47</td>
+                    <td class="bits-right">32</td>
+                </tr>
+                <tr>
+                    <td>0000</td>
+                    <td>0000</td>
+                    <td>0000</td>
+                    <td>0000</td>
+                    <td>0000</td>
+                    <td>0000</td>
+                    <td>0000</td>
+                    <td>0000</td>
+                </tr>
+                <tr>
+                    <td colspan="4">31</td>
+                    <td colspan="3">15</td>
+                    <td class="bits-right">0</td>
+                </tr>
+            </table>
+            <form>
+                <table id="button-table">
+                    <tr>
+                        <td rowspan="3" id="numeric-system">
+                            <ul>
+                                <li>
+                                    <input type="radio" name="numeric" id="hex" /><label for="hex">Hex</label>
+                                </li>
+                                <li>
+                                    <input type="radio" checked="checked" name="numeric" id="dec" /><label for="dec">Dec</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="numeric" id="oct"/><label for="oct">Oct</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="numeric" id="bin"/><label for="bin">Bin</label>
+                                </li>
+                            </ul>
+                        </td>
+                        <td><button disabled="disabled" class="disabled-buttons"></button></td>
+                        <td><button class="active-button">Mod</button></td>
+                        <td><button class="disabled-buttons letters light-border" disabled="disabled">A</button></td>
+                        <td><button class="disabled-buttons" disabled="disabled">MC</button></td>
+                        <td><button class="disabled-buttons" disabled="disabled">MR</button></td>
+                        <td><button class="disabled-buttons" disabled="disabled">MS</button></td>
+                        <td><button class="disabled-buttons" disabled="disabled">M+</button></td>
+                        <td><button class="disabled-buttons" disabled="disabled">M-</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="active-button">(</button></td>
+                        <td><button class="active-button">)</button></td>
+                        <td><button class="disabled-buttons letters light-border" disabled="disabled">B</button></td>
+                        <td><button class="active-button bold arrow">&larr;</button></td>
+                        <td><button class="active-button">CE</button></td>
+                        <td><button class="active-button">C</button></td>
+                        <td><button class="active-button">&plusmn;</button></td>
+                        <td><button class="disabled-buttons light-border" disabled="disabled">&radic;</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="active-button">RoL</button></td>
+                        <td><button class="active-button">RoR</button></td>
+                        <td><button class="disabled-buttons letters light-border" disabled="disabled">C</button></td>
+                        <td><button class="active-button digits">7</button></td>
+                        <td><button class="active-button digits">8</button></td>
+                        <td><button class="active-button digits">9</button></td>
+                        <td><button class="active-button">/</button></td>
+                        <td><button class="disabled-buttons light-border" disabled="disabled">%</button></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3" id="byte-table">
+                            <ul>
+                                <li>
+                                    <input type="radio" name="byte-table" checked="checked" id="qword"/><label for="qword">Qword</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="byte-table" id="dword"/><label for="dword">Dword</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="byte-table" id="word"/><label for="word">Word</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="byte-table" id="byte"/><label for="byte">Byte</label>
+                                </li>
+                            </ul>
+                        </td>
+                        <td><button class="active-button">Or</button></td>
+                        <td><button class="active-button">Xor</button></td>
+                        <td><button class="disabled-buttons letters light-border" disabled="disabled">D</button></td>
+                        <td><button class="digits">4</button></td>
+                        <td><button class="digits">5</button></td>
+                        <td><button class="digits">6</button></td>
+                        <td><button class="active-button">*</button></td>
+                        <td><button class="disabled-buttons light-border" disabled="disabled">1/x</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="active-button">Lsh</button></td>
+                        <td><button class="active-button">Rsh</button></td>
+                        <td><button class="disabled-buttons letters light-border" disabled="disabled">E</button></td>
+                        <td><button class="digits">1</button></td>
+                        <td><button class="digits">2</button></td>
+                        <td><button class="digits">3</button></td>
+                        <td><button class="active-button">-</button></td>
+                        <td rowspan="2"><button class="active-button bold" id="equal">=</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="active-button">Not</button></td>
+                        <td><button class="active-button">And</button></td>
+                        <td><button class="disabled-buttons letters light-border" disabled="disabled">F</button></td>
+                        <td colspan="2"><button class="active-button" id="zero">0</button></td>
+                        <td><button class="disabled-buttons light-border" disabled="disabled">.</button></td>
+                        <td><button class="active-button">+</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

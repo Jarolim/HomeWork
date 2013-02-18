@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Persons Information</title>
+    </head> 
+    <body>
+        <form>
+            <table border="1">
+                <thead>
+                    <!--Nqma thead-->
+                </thead>
+                <tfoot>
+                    <tr>                  
+                        <td colspan="3">
+                            <input type="submit" value="Submit" required="required" />
+                            <input type="reset" name="reset" required="required" value="Clear this Form" />
+                        </td>                    
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <td><label for="lastname">Last Name:</label></td>
+                        <td colspan ="2"><input type="text" id="lastname" required="required" placeholder="Ivanov" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="firstname">First Name:</label></td>
+                        <td colspan ="2"><input type="text" id="firstname" required="required" placeholder="Ivailo" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="address">Address:</label></td>
+                        <td colspan ="2"><textarea name="text" id="address" required="required" placeholder="Pleace write down your current address here:"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><label for="city">City:</label></td>
+                        <td><input type="text" id="city" placeholder="Sofia" /> </td>
+                        <td><label for="state">State:</label><input type="text" id="state" required="required" placeholder="New York" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="country">Country:</label></td>
+                        <td colspan ="2">
+                            <select name="country">
+                                <option value="Bulgaria" selected="selected">Bulgaria</option>
+                                <option value="USA">USA</option>
+                                <option value="UK">UK</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="postalcode">Zip/Postal Code:</label></td>
+                        <td colspan ="2"><input type="text" id="postalcode" required="true" placeholder="1632" /></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="countrycode">Phone (country code, </label>
+                            <label for="areacode">area code , </label>
+                            <label for="number">number):</label>
+                        </td>
+                        <td colspan ="2">
+                            (+<input type="text" id="countrycode" required="true" placeholder="359" />)<input type="text" id="areacode" placeholder="88" />-<input type="text" id="number" placeholder="33221100" />
+                        </td>
+                    </tr>
+                     <tr>
+                        <td><label for="Email">Email:</label></td>
+                        <td colspan ="2"><input type="email" id="Email" required="true" required="true" placeholder="sample@sample.sample"></input></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="month">Birth date:</label>
+                            <label for="day"></label>
+                            <label for="year"></label>
+                        </td>
+                        <td colspan ="2">
+                            Month<input type="text" id="month" required="true" placeholder="01" />Day<input type="text" id="day" required="true" placeholder="01" />Year(4 digit)<input type="text" id="year" required="true" placeholder="1999" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="country">Country:</label></td>
+                        <td colspan ="2">
+                            <select name="gender">
+                                <option value="Male" selected="selected">Male</option>
+                                <option value="Female">Female</option>                        
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="Start">Starting Date:</label> 
+                        </td>                   
+                        <td colspan="2">
+                            <input type="radio" name="Start" required="true" value="Summer 2012" />Summer 2012
+                            <input type="radio" name="Start" required="true" value="Spring 2012" />Spring 2012
+                        </td>                    
+                    </tr>
+                    <tr>
+                        <td><label for="comments">Comments/Questions:</label></td>
+                        <td colspan ="2"><textarea name="text" id="comments" required="true" placeholder="Pleace send more information about you:"></textarea></td>
+                    </tr>                 
+                </tbody>
+            </table>
+        </form>
+    </body>
+</html>

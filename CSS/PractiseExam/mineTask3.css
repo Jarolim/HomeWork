@@ -1,0 +1,32 @@
+﻿html,body,div,p,a,input,ul,li,fieldset,button,input,select,option,textarea {
+  margin: 0;
+  padding: 0;
+}
+body {
+    font-size: 16px;
+    color: #333333;
+}
+#popup-box {
+    margin-left:15px;
+    width:150px;
+    list-style-type:none;
+}
+.invisible {
+    display:none;
+}
+li.popup-item {
+    text-decoration:none;
+    color:black;
+   position:relative;
+    line-height:25px;
+    border-bottom:1px solid black;
+}
+    li.popup-item:first-of-type {
+        border-top:1px solid black;
+    }
+img {
+    width:25px;
+    vertical-align:central;
+    padding-top:5px;
+    padding-bottom:5px;
+}

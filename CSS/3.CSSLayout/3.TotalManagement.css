@@ -1,0 +1,78 @@
+﻿body {
+    
+}
+div {
+    border: 2px solid #bd8615;
+    border-radius:7px;
+    height:350px;
+    width:600px;
+    background-color: #3B3B3B;
+    opacity: 0.9;
+}
+nav {
+    z-index:1;
+    -webkit-border-top-left-radius: 5px;
+    border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 100px;
+    width: 600px;
+    background: rgb(59,59,59); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(59,59,59,1) 0%, rgba(58,58,58,1) 19%, rgba(53,53,53,1) 37%, rgba(43,43,43,1) 53%, rgba(37,37,37,1) 73%, rgba(24,24,24,1) 92%, rgba(14,14,14,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(59,59,59,1)), color-stop(19%,rgba(58,58,58,1)), color-stop(37%,rgba(53,53,53,1)), color-stop(53%,rgba(43,43,43,1)), color-stop(73%,rgba(37,37,37,1)), color-stop(92%,rgba(24,24,24,1)), color-stop(100%,rgba(14,14,14,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(59,59,59,1) 0%,rgba(58,58,58,1) 19%,rgba(53,53,53,1) 37%,rgba(43,43,43,1) 53%,rgba(37,37,37,1) 73%,rgba(24,24,24,1) 92%,rgba(14,14,14,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(59,59,59,1) 0%,rgba(58,58,58,1) 19%,rgba(53,53,53,1) 37%,rgba(43,43,43,1) 53%,rgba(37,37,37,1) 73%,rgba(24,24,24,1) 92%,rgba(14,14,14,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(59,59,59,1) 0%,rgba(58,58,58,1) 19%,rgba(53,53,53,1) 37%,rgba(43,43,43,1) 53%,rgba(37,37,37,1) 73%,rgba(24,24,24,1) 92%,rgba(14,14,14,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(59,59,59,1) 0%,rgba(58,58,58,1) 19%,rgba(53,53,53,1) 37%,rgba(43,43,43,1) 53%,rgba(37,37,37,1) 73%,rgba(24,24,24,1) 92%,rgba(14,14,14,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b3b3b', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
+    opacity: 0.9;
+}
+
+section {
+    height: 200px;
+    width: 600px;  
+    -webkit-border-bottom-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+h1 {
+    font-family:'Times New Roman';
+    font-weight:normal;
+    padding-top:5px;
+    padding-left:7px;
+    color:#f2dd12;
+}
+span {
+color:white;
+}
+p {
+    padding-left:7px;
+    color:#c3c3c3;
+    font-family:Verdana;
+    font-size:13px;  
+}
+#button {
+background: url('redbut.png');
+background-position:center;
+background-repeat:no-repeat;
+border-radius:12px;
+border:1px solid white;
+width:55px;
+height:28px;
+color:white;
+}
+img {
+padding:8px;
+float:left;
+width:60px;
+height:60px;
+background: no-repeat;
+}
+form {
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+    padding-top:30px;
+
+}

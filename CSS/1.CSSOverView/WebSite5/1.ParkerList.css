@@ -1,0 +1,55 @@
+﻿* {
+	padding:0;
+	margin:0;
+}
+
+/* font */
+body {
+	font-family: sans-serif;
+}
+/*background*/
+#background {
+	background-color: #595959;
+	margin: 20px;
+	width: 400px;
+}
+
+/* table */
+td,p {
+	padding-top: 0px;
+	padding-bottom: 8px;
+	padding-right: 10px;
+	padding-left: 5px;
+	vertical-align: top;
+}
+thead th {
+	text-align: left;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	color: #A4AFA5;
+	font-weight: normal;	
+}
+
+/*colors*/
+
+.white {
+	color: #E2E3E4;
+	font-style: italic;
+	font-weight: bold;
+}
+.red {
+	color: #F90615;
+	font-weight: bold;
+}
+.grey {
+	color: #A4AFA5;
+	font-weight: bold;
+}
+.orange {
+	color: #C06A28;
+	font-weight: bold;
+}
+.yellow {
+	color: #F8E5A6;
+	font-weight: bold;
+}

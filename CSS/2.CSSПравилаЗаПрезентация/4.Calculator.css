@@ -1,0 +1,170 @@
+﻿body, div, form, table, ul, li {
+    margin:0px;
+    padding:0px;
+}
+
+/*background*/
+    ul li {
+        list-style:none;
+    }
+#calculator {
+    width:412px;
+    margin:10px;
+    padding: 8px 8px 8px 8px;
+    font-family:Verdana;
+    border:1px solid;
+    border-radius:5px;
+    background-color:#ABCBEA;
+}
+/*calculator logo*/
+#logo {
+    background-image:url(logocalc.png);
+    background-repeat:no-repeat;
+    padding-left:20px;
+    padding-bottom:8px;
+    font-size:0.8em;
+}
+
+/*minimise / close - no time :(*/
+
+/*menu*/
+#menu ul li {
+    display:inline;
+}
+#menu {
+    font-family:Verdana;
+    border-bottom:1px solid #808C99;
+    padding-left: 8px;
+    padding-top:2px;
+    font-size:0.7em;
+    background-image: -moz-linear-gradient(top, #FFFFFF 0%, #D5DCEF 100%);
+    background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #D5DCEF 100%);
+}
+
+/*content*/
+#content {
+    width:408px;
+    margin-top:3px;
+    border: 1px solid #808C99;
+    border-radius:3px;
+    background-image: -moz-linear-gradient(top, #EDF4FD 0%, #D9E4F1 100%);
+    background-image: -o-linear-gradient(top, #EDF4FD 0%, #D9E4F1 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #EDF4FD), color-stop(1, #D9E4F1));
+    background-image: -ms-linear-gradient(top, #EDF4FD 0%, #D9E4F1 100%);
+}
+
+/*display*/
+#display {
+    width:390px;
+    height:50px;
+    text-align:right;
+    font-size:1.3em;
+    margin:8px 8px 3px 8px;
+    border:1px solid #808C99;
+    border-radius:3px;
+    background-image: -moz-linear-gradient(top, #E5EFFB 0%, #FEFFFF 100%);
+    background-image: -o-linear-gradient(top, #E5EFFB 0%, #FEFFFF 100%);
+    background-image: -ms-linear-gradient(top, #E5EFFB 0%, #FEFFFF 100%);
+    background-image: -webkit-linear-gradient(top, #E5EFFB 0%, #FEFFFF 100%);
+}
+
+/*zeros binary display*/
+#zeros {
+    font-family:Consolas;
+    margin:3px 8px 3px 8px;
+    width:392px;
+    font-size:12px;
+    border:1px solid #616D93;
+    border-radius:5px;
+}
+    #zeros tr td {
+        padding-right:8px;
+        padding-bottom:0px;
+        padding-left:10px;
+        line-height:100%;
+    }
+    #zeros .bits-right {
+        text-align:right;
+    }
+    #zeros tr:nth-child(2n) {
+        color:grey;
+    }
+    #zeros tr:nth-child(2n+1) {
+        color:#284073;
+    }
+
+/*radio buttons*/
+#button-table {
+    margin-left:6px;
+    margin-right:6px;
+    margin-bottom:6px;
+    padding:0px;
+}
+#numeric-system {
+    font-size:10px;
+    border:1px solid #808C99;
+    border-radius:3px;
+}
+
+#byte-table {
+    font-size:10px;
+    border:1px solid #808C99;
+    border-radius:3px;
+}
+
+/*buttons*/
+.active-button, .disabled-buttons, .digits {
+    color:#284073;
+    width:37px;
+    height:29px;
+}
+.disabled-buttons {
+    border:1px solid #808C99;
+    font-size:12px;
+    border-radius:2px;
+    background-color:#D9E4F1;
+}
+    .disabled-buttons.light-border {
+        border:1px solid #BAC8D7;
+    }
+    .disabled-buttons.letters {
+        font-size:14px;
+    }
+.active-button {
+    border:1px solid #808C99;
+    border-radius:3px;
+    font-size:12px;
+    background-image: -moz-linear-gradient(top, #FFFFFF 0%, #D5DCEF 100%);
+    background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #D5DCEF 100%);
+    background-image: -o-linear-gradient(top, #FFFFFF 0%, #D5DCEF 100%);
+    background-image: -ms-linear-gradient(top, #FFFFFF 0%, #D5DCEF 100%);
+}
+    .active-button.bold {
+        font-size:14px;
+    }
+    .active-button.arrow {
+        padding-bottom:3px;
+    }
+.digits {
+    font-family:Verdana;
+    font-size:14px;
+    border:1px solid #808C99;
+    background-image: -moz-linear-gradient(top, #FCFFFF 0%, #E8EEF5 100%);
+    background-image: -ms-linear-gradient(top, #FCFFFF 0%, #E8EEF5 100%);
+    background-image: -o-linear-gradient(top, #FCFFFF 0%, #E8EEF5 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FCFFFF), color-stop(1, #E8EEF5));
+}
+button:hover:enabled, active-button:hover {
+    background: -webkit-linear-gradient(#FEF5EB 0, #FCE3C6 49%, #FBD075 50%, #FCF8CA 100%);
+    background: -moz-linear-gradient(#FEF5EB 0, #FCE3C6 49%, #FBD075 50%, #FCF8CA 100%);
+    background: -o-linear-gradient(#FEF5EB 0, #FCE3C6 49%, #FBD075 50%, #FCF8CA 100%);
+    background: -ms-linear-gradient(#FEF5EB 0, #FCE3C6 49%, #FBD075 50%, #FCF8CA 100%);
+    border:1px solid #F5D50F;
+
+}
+#zero {
+    width:78px;
+}
+#equal {
+    height:60px;
+}

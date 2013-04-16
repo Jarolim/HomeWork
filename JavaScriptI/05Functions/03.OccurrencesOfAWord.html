@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Occurrences of a word.</title>
+    <!--Write a function that finds all the occurrences of word in a text
+        The search can case sensitive or case insensitive
+        Use function overloading.-->
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+    <p>Write a function that finds all the occurrences of word in a text
+    The search can case sensitive or case insensitive
+    Use function overloading </p>
+	<a href="#" onclick="onButtonClick()">Click to execute program!</a>
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">
+	</script>
+    <script>
+        var text = "We are living in an yellow submarine. In the sky there are no clouds. So we are drinking all the day. We will move out of it in 5 days.";
+        var wordToSearch = "in";
+        var isCaseSensitive = false;
+
+        CountOccurenceWord(text, wordToSearch);
+        CountOccurenceWord(text, wordToSearch, true);
+
+        function CountOccurenceWord(text, wordToSearch, isCaseSensitive) {
+            isCaseSensitive = isCaseSensitive || false;
+            var countSearchedWord = 0;
+
+            if (isCaseSensitive === false) {
+                var strArr = text.split(wordToSearch); //split is case-insensitive
+
+                for (var str in strArr) {
+                    countSearchedWord++;
+                }
+                jsConsole.writeLine("The count of word '" + wordToSearch + "' (case-insensitive search)  is: " + countSearchedWord)
+            }
+            else {
+                var index = text.indexOf(wordToSearch);//indexOf is case-sensitive
+
+                while (index >= 0) {
+                    countSearchedWord++;
+                    index = text.indexOf(wordToSearch, index + 1);
+                }
+                jsConsole.writeLine("The count of word '" + wordToSearch + "' (case-sensitive search)  is: " + countSearchedWord)
+            }
+        }
+
+        //Task starts here:
+        //function onButtonClick() {
+        //    var text = "We are living in an yellow submarine. In the sky there are no clouds. So we are drinking all the day. We will move out of it in 5 days.";
+        //    var word = "in";
+        //    var repeatedNumber = countWordsInText(text, word);
+        //    jsConsole.writeLine("Word " + word + " is repeating " + repeatedNumber + " times");
+        //}
+        //function countWordsInText(text, word) {
+        //    var counter = 0;
+        //    var i;
+        //    var arr = text.split(' ');
+        //    for (i = 0; i < arr.length; i++) {
+        //        if (arr[i].trim() == word) {
+        //            counter++;
+        //        }
+        //    }
+        //    return counter;
+        //}
+    </script>
+</body>
+</html>

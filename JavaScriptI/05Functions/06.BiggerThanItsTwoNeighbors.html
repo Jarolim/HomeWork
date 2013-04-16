@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Bigger than its two neighbors</title>
+    <!--Write a function that checks if the element at given position 
+        in given array of integers is bigger than its two neighbors (when such exist).-->
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+    <p>Write a function that checks if the element at given position in 
+        given array of integers is bigger than its two neighbors (when such exist).</p>
+    <div>The array is: [10,2,3,12,5,6,20,8,9,10]</div>
+    <div>Check based on index. Pleace enter index!</div>
+    <input type="text" id="tb-number"/>
+	<a href="#" onclick="checkTheBigger()">Find out is it bigger than its neighbors!</a>
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+    <script>
+        function checkTheBigger() {
+            var arr = [10,2,3,12,5,6,20,8,9,10];
+            var index = jsConsole.readFloat("#tb-number");
+            var length = arr.length - 1;
+            if (index == 0) {
+                if (arr[index] > arr[index + 1]) {
+                    jsConsole.writeLine("The number at index " + index + " is bigger than its neighbors.");
+                } else {
+                    jsConsole.writeLine("The number at index " + index + " is NOT bigger than its neighbors.");
+                }
+            } else if (index == length) {
+                if (arr[index] > arr[index - 1]) {
+                    jsConsole.writeLine("The number at index " + index + " is bigger than its neighbors.");
+                } else {
+                    jsConsole.writeLine("The number at index " + index + " is NOT bigger than its neighbors.");
+                }
+            } else if ((index > 0) && (index < length)) {
+                if ((arr[index] > arr[index + 1]) && (arr[index] > arr[index - 1])) {
+                    jsConsole.writeLine("The number at index " + index + " is bigger than its neighbors.");
+                } else {
+                    jsConsole.writeLine("The number at index " + index + " is NOT bigger than its neighbors.");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

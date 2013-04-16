@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>CheckTwoNumbers</title>
+        <!-- Write an if statement that examines two integer variables and exchanges 
+            their values if the first one is greater than the second one.-->
+        <link href="styles/js-console.css" rel="stylesheet" />
+        
+        <style>
+            label
+            {
+                font-family: 'Segoe UI';
+                margin-left: 20px;
+            }
+            input[type=text]
+            {
+                border: 1px solid black;
+                padding: 5px;
+                width: 60px;
+                background-color: black;
+                color: white;
+                font-family: 'Segoe UI'; 
+                margin-bottom: 5px;
+            }
+            a
+            {
+                color: black;
+                border: 1px solid black;
+                padding: 2px 10px; 
+                text-decoration: none; 
+                display: inline-block; 
+                font-family: 'Segoe UI';
+                margin: 15px 0 15px 10px;
+            }
+            a:hover
+            {
+                text-decoration: underline;
+            }
+            #js-console
+            {
+                margin-left: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <label for="numberOne">First number: </label>
+        <input type="text" id="numberOne"/>
+
+        <label for="numberTwo">Second number: </label>
+        <input type="text" id="numberTwo"/>
+
+        <a href="#" onclick="CheckTwoNumbers()">Exchange numbers if the first is greater!</a>
+
+        <div id="js-console"></div>
+        <script src="scripts/js-console.js"></script>
+        <script>
+
+            function CheckTwoNumbers()
+            {
+                var firstNum = jsConsole.readFloat("#numberOne");
+                var secondNum = jsConsole.readFloat("#numberTwo");
+                var biggerNum = secondNum;
+
+                if (firstNum > secondNum)
+                {
+                    biggerNum = firstNum;
+                    jsConsole.writeLine("Exchanged numbers: First number = " + secondNum + " and Second number = " + firstNum);
+                }
+                else
+                {
+                    jsConsole.writeLine("First number is not greater than the second.");
+                }
+            }
+        </script>
+    </body>
+</html>

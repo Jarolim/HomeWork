@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Max Sequence Of Equal Elementss</title>
+    <!--Write a script that finds the maximal sequence of equal elements in an array.
+		Example: {2, 1, 1, 2, 3, 3, 2, 2, 2, 1}  {2, 2, 2}.-->
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+    <p>Write a script that finds the maximal sequence of equal elements in an array. </p>
+	<a href="#" onclick="onButtonClick()">Click to execute program!</a>
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">
+	</script>
+    <script>
+        //Task starts here:
+        function onButtonClick() {
+            var array = new Array(2, 1, 1, 2, 3, 3, 2, 2, 2, 1);
+            var len = 1;
+            var bestLen = 0;
+            var bestNumber = 0;
+            for (var i = 0; i < array.length - 1; i++) {
+                if (array[i] == array[i + 1]) {
+                    len++;
+                }
+                else {
+                    if (len > bestLen) {
+                        bestNumber = array[i];
+                        bestLen = len;
+                    }
+                    len = 1;
+                }
+            }
+            if (len > bestLen) {
+                bestLen = len;
+                bestNumber = array[array.length - 1];
+            }
+
+            //Printing the things to look good
+            jsConsole.write("{");
+            for (var i = 0; i < array.length - 1; i++) {
+                jsConsole.write(array[i] + ",");
+            }
+            jsConsole.write(array[array.length - 1] + "} → {");
+            for (var i = 0; i < bestLen - 1; i++) {
+                jsConsole.write(bestNumber + ",");
+            }
+            jsConsole.write(bestNumber + "}");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+﻿html , head,  body , header , nav, aside , section, footer , article ,hr, a ,div , span , p , ul , li {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url(images2/body-tile.jpg);
+    background-repeat: repeat-x;
+    font-family: 'Segoe UI',sans-serif;
+    font-size: 10px;
+}
+
+#wrapper {
+    width: 735px;
+    height: 690px;
+    margin-top:20px;
+    margin-left:20px;
+    background-image: url(images2/site-wrap-tile.jpg);
+    background-repeat: repeat-x;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#wrapper > header {
+    width: 213px;
+    margin-left: 15px;
+}
+
+#logo {
+    background-image: url(images2/logo-tile.png);
+    background-repeat: repeat-x;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;    
+    height: 100px;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: -13px;
+}
+
+#logo h1 {
+    padding-top: 30px;
+    color:#808080;
+}
+
+#logo hr {
+    opacity: 0.3;
+}
+
+#secondline {
+    font-size: 1.2em;
+    color:#808080;
+    padding-top:-30px;
+}
+
+#left {
+    width: 215px;
+    float: left;
+    margin-top: 27px;
+    margin-left: 12px;    
+    line-height: 1.5em;
+}
+
+#site-wrap:after, #news:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#navigation {
+    padding: 18px 0px;
+    background: #cdc4aa;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-top:-17px;
+}
+
+#navigation ul {
+    list-style-type: none;
+    background: #2a2a2a;
+    font-size: 1.2em;
+}
+
+#navigation ul li {
+    padding-top: 10px;
+    border-bottom: 1px solid white;
+    background-image: url(images2/li-arrow-white.png);
+    background-repeat: no-repeat;
+    background-position: 90% 70%;
+}
+
+#navigation ul li a {
+    color: white;
+    margin: 0px 26px;
+    border-left: 1px solid white;
+    text-decoration: none;
+    padding-left: 10px;
+}
+
+#news {
+    background-image: url(images2/news-tile.jpg);
+    background-repeat: repeat-y;
+    padding-top: 38px;
+    padding-left: 27px;
+    padding-right: 27px;
+    padding-bottom: 10px;
+    color: #756740;
+}
+
+#news header {
+    font-weight: bold;
+}
+
+#news p {
+    margin: 10px 0px;
+}
+
+#news section:nth-of-type(2) {
+    border-top: 1px grey dotted;
+    padding-top: 10px;
+}
+
+#support {
+    height: 122px;
+    width: 221px;
+    background-image: url(images2/support.jpg);
+
+}
+
+#news a {
+    float: right;
+}
+
+#main {
+    float: left;
+    position: relative;
+    top: -100px;
+    width: 466px;
+    background: white;
+    padding-left: 33px;    
+    line-height: 1.5em;
+    text-align: justify;
+    color: #756740;
+}
+
+#main > header {
+    width: 507px;
+    height: 265px;
+    background-image: url(images2/banner.jpg);
+    background-repeat: no-repeat;
+
+    left: -33px;
+    margin-bottom: 40px;
+    margin-top: -15px;
+    margin-left: -33px;
+}
+
+#main > article h2 {
+    border-bottom: 1px solid grey;
+}
+
+#main > article img {
+    float: left;
+    margin-top: 10px;
+    margin-right: 20px;
+    border: 5px solid #e7e0ce;
+    border-radius: 5px;
+}
+
+#main > article a {
+    float: right;
+    margin-right: 20px;
+}
+
+#main > article:after {
+    content: "";
+    display: block;
+    clear:both;
+}
+
+#main > article p:first-of-type {
+    margin-top: 20px;
+}
+
+#main > article p {
+    margin-top: 10px;
+    padding-right: 20px;
+}
+
+#main article hr {
+    color: #c29214;
+}
+
+#main > section {
+    margin-top: 15px;
+}
+
+#main > section:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#main > section h3 {
+    border-bottom: 1px solid grey;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+#main > section article {
+    width: 50%;
+    float: left;
+}
+
+#main > section article p {
+    width: 114px;
+    float: left;
+    padding: 0px 10px;
+}
+
+.pic {
+    display: block;
+    float: left;
+    width: 86px;
+    background: white;
+    border: 5px solid #e7e0ce;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#main > section a {
+    float: right;
+    margin-right: 20px;
+}
+
+footer {
+    clear: both;
+    background: #dfd4b5;
+    padding: 15px;
+    margin: 50px 9px 10px 12px;
+    text-align: center;
+    position: relative;
+    top: -100px;
+    color: #756740;
+    font-weight: bold;
+}
+
+a {
+    color: #756740;
+    font-weight: bold;
+}
+
+h2, h3 {
+    color: #c29214;
+}

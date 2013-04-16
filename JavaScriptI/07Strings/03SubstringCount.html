@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Substring count</title>
+    <!--Write a JavaScript function that finds how many 
+        times a substring is contained in a given text 
+        (perform case insensitive search).-->
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+    <p>Write a JavaScript function that finds how many 
+        times a substring is contained in a given text 
+        (perform case insensitive search).</p>	
+    <label for="tb-text">Enter text: </label>
+    <input type="text" id="tb-text" />
+    <br />
+    <label for="tb-word">Enter word: </label>
+    <input type="text" id="tb-word" />
+    <a href="#" onclick="onButtonClick()">Click to execute program!</a>
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">
+	</script>
+    <script>
+        //Task starts here:
+        function onButtonClick() {
+            var text = jsConsole.read("#tb-text");
+            var sub = jsConsole.read("#tb-word");
+            var result = countAppearances(text, sub);
+            jsConsole.writeLine(result + " appearances of the substring " + "'" + sub + "'!");
+
+        }
+        function countAppearances(text, sub) {
+            text = text.toLowerCase();
+            sub = sub.toLowerCase();
+            var indexOfSub = text.indexOf(sub);
+            var count = 0;
+            while (indexOfSub > -1) {
+                count++;
+                indexOfSub = text.indexOf(sub, indexOfSub + 1);
+            }
+            return count;
+        }
+
+      //  function onButtonClick() {
+      //
+      //      var txt = jsConsole.read("#tb-text");
+      //      var word = jsConsole.read("#tb-word");
+      //      wordCounter(txt, word);
+      //
+      //
+      //  }
+      //
+      //  function wordCounter(text, str) {
+      //      var regexp = new RegExp("\\" + str, "gi");
+      //      //var regexp = /\in/gi;
+      //      jsConsole.writeLine("Word " + str + " count = " + text.match(regexp).length);
+      //  }
+    </script>
+</body>
+</html>

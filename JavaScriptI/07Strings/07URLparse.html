@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>URL parse</title>
+    <!--Write a script that parses an URL address given in the format:
+		and extracts from it the [protocol], [server] and [resource] elements.
+         Return the elements in a JSON object.For example from the
+         URL http://www.devbg.org/forum/index.php the following 
+        information should be extracted:
+        {protocol: "http", server: "www.devbg.org",
+         resource: "/forum/index.php"}-->
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+    <p>Write a script that parses an URL address given in the format:
+		and extracts from it the [protocol], [server] and [resource] elements.
+         Return the elements in a JSON object.For example from the
+         URL http://www.devbg.org/forum/index.php the following 
+        information should be extracted:
+        {protocol: "http", server: "www.devbg.org",
+         resource: "/forum/index.php"}</p>
+    <label for="tb-text">Enter url (http://www.devbg.org/forum/index.php):  </label>
+    <input type="text" id="tb-text" />
+    <a href="#" onclick="onBtnClick()">Parse!</a>
+    <div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+    <script>
+        function onBtnClick() {
+
+            var txt = jsConsole.read("#tb-text");
+            var serverIndex = txt.indexOf(":") + 3;
+            var protocolURL = txt.substr(0, txt.indexOf(":"));
+            var serverURL = txt.substr(serverIndex, txt.indexOf("/", serverIndex) - serverIndex);
+            var resourceURL = txt.substr(txt.indexOf("/", serverIndex), txt.length - txt.indexOf("/", serverIndex));
+            var parsedUrl = {
+                protocol: protocolURL,
+                server: serverURL,
+                resource: resourceURL,
+            }
+
+            jsConsole.writeLine("protocol: " + parsedUrl.protocol);
+            jsConsole.writeLine("server: " + parsedUrl.server);
+            jsConsole.writeLine("resource: " + parsedUrl.resource);
+
+        }
+    </script>
+</body>
+</html>

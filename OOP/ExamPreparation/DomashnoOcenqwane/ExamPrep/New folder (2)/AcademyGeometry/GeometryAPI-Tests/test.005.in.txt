@@ -1,0 +1,20 @@
+2
+vertex (0,0,0)
+area
+measure
+volume
+end
+circle (10,10,0) 5
+normal
+center
+rotate (5,5,0) 180
+center
+area
+end
+cylinder (20,20,0) (40,40,40) 10
+area
+center
+rotate (20,20,0) 90
+center
+end
+

@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>ProductOfThreeNumbers</title>
+        <!-- Write a script that shows the sign (+ or -) of the product of 
+            three real numbers without calculating it. Use a sequence of if statements.-->
+        <link href="styles/js-console.css" rel="stylesheet" />
+        <style>
+            label
+            {
+                font-family: 'Segoe UI';
+                margin-left: 20px;
+            }
+            input[type=text]
+            {
+                border: 1px solid black;
+                padding: 5px;
+                width: 60px;
+                background-color: black;
+                color: white;
+                font-family: 'Segoe UI'; 
+                margin-bottom: 5px;
+            }
+            a
+            {
+                color: black;
+                border: 1px solid black;
+                padding: 2px 10px; 
+                text-decoration: none; 
+                display: inline-block; 
+                font-family: 'Segoe UI';
+                margin: 15px 0 15px 10px;
+            }
+            a:hover
+            {
+                text-decoration: underline;
+            }
+            #js-console
+            {
+                margin-left: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <label for="numberOne">First number: </label>
+        <input type="text" id="numberOne"/>
+
+        <label for="numberTwo">Second number: </label>
+        <input type="text" id="numberTwo"/>
+
+        <label for="numberThree">Third number: </label>
+        <input type="text" id="numberThree"/>
+
+        <a href="#" onclick="ProductOfThreeNumbers()">ProductOfThreeNumbers</a>
+
+        <div id="js-console"></div>
+        <script src="scripts/js-console.js"></script>
+        <script>
+            function ProductOfThreeNumbers()
+            {
+                var firstNum = jsConsole.readFloat("#numberOne");
+                var secondNum = jsConsole.readFloat("#numberTwo");
+                var thirdNum = jsConsole.readFloat("#numberThree");
+                var counter = 0;
+                if ((firstNum == 0) || (secondNum == 0) || (thirdNum == 0)) //zero check
+                {
+                    jsConsole.writeLine("If you multiply the 3 integers you'll get a 0");
+                }
+                else
+                {
+                    if (firstNum < 0)
+                    {
+                        counter++;
+                    }
+                    if (secondNum < 0)
+                    {
+                        counter++;
+                    }
+                    if (thirdNum < 0)
+                    {
+                        counter++;
+                    }
+
+                    if (counter % 2 == 0)
+                    {
+                        jsConsole.writeLine("If you multiply the 3 integers you'll get a '+' sign");
+
+                    }
+                    else
+                    {
+                        jsConsole.writeLine("If you multiply the 3 integers you'll get a '-' sign");
+
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

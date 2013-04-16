@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Remove elems with a given value</title>
+    <!--Write a function that removes all elements with a given value
+        Attach it to the array class
+        Read about prototype and how to attach methods.-->
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+    <p>Write a function that removes all elements with a given value
+        Attach it to the array class
+        Read about prototype and how to attach methods</p>
+    <div>The Array is: [1, 2, 1, 4, 1, 3, 4, 1, 111, 3, 2, 1, "1"]</div>
+    <input type="text" id="tb-number"/>
+	<a href="#" onclick="clickButton()">Remove from array!</a>
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+    <script>
+        //Task starts here:
+        function clickButton() {
+            Array.prototype.remove = function (element) {
+                var newArr = [];
+                for (var i in this) {
+                    if (this[i] != element) {
+                        newArr.push(this[i]);
+                    }
+                }
+                return newArr;
+            }
+
+            var arr = [1, 2, 1, 4, 1, 3, 4, 1, 111, 3, 2, 1, "1"];
+
+            var finalArr = arr.remove(jsConsole.readInteger("#tb-number"));
+
+            for (var i in finalArr) {
+                jsConsole.write(finalArr[i] + "</br>");
+            }
+            //I dont know what is this that prints at the end :(:(:( pls help if u can
+        }
+    </script>	
+</body>
+</html>
+

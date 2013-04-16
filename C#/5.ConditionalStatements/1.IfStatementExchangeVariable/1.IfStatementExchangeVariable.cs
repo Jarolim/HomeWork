@@ -16,7 +16,7 @@ class IfStatementExchangeVariable
         {
             BiggerNumber = SecondInt;
         }
-        Console.WriteLine("The greater number is {0}", SecondInt);
+		Console.WriteLine("The greater number is {0}", BiggerNumber);
     }
 }
 

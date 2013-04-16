@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<script>
+    function Solve(args) {
+
+        var positions = args[0].split(', ');
+
+        for (var i = 0; i < positions.length; i++) {
+            positions[i] = parseInt(positions[i]);
+        }
+
+        var maxJumpsCount = 0;
+
+        var positionsLen = positions.length;
+
+        for (var startPosition = 0; startPosition < positionsLen; startPosition++) {
+            for (var stepLength = 1 ; stepLength <= positionsLen; stepLength++) {
+                
+                var currentPosition = startPosition;
+
+                var visited = [];
+                //visited[currentPosition] = false;
+
+                var jumpsCount = 0;
+
+                while (!visited[currentPosition]) {
+                    visited[currentPosition] = true;
+
+                    jumpsCount++;
+                    
+                    var lastPosition = currentPosition;
+
+                    currentPosition = currentPosition + stepLength;
+                    if (currentPosition >= positionsLen) {
+                        currentPosition = currentPosition - positionsLen;
+                    }
+
+                    if (positions[currentPosition] <= positions[lastPosition]) {
+                        break;
+                    }
+                }
+
+                if (jumpsCount > maxJumpsCount) {
+                    maxJumpsCount = jumpsCount;
+                }
+            }
+        }
+        return maxJumpsCount;
+    }
+
+
+    function HandleSolveIO() {
+        var args = [];
+
+        args[0] = "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0";
+
+        console.log(Solve(args));
+    }
+
+</script>
+<body onload ="HandleSolveIO()">
+    
+</body>
+</html>

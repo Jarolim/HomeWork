@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<script>
+    function Solve(args) {
+        var num = args[0].toString();
+        //console.log(num);
+        for (var i = 0; i < 3; i++) {
+            var len = num.length;
+            //console.log(len);         
+            if (num[len - 1] == '0') {
+                var test = num.substr(0, len - 1);
+                //console.log(test);
+                num = test;
+            }
+            else {
+                var test = num[len - 1] + num.substr(0, len - 1);
+                num = test;
+            }
+        }
+        return num;
+        //console.log(num);               
+    }
+    function HandleSolveIO() {
+        var args = [];
+        args[0] = "180001";
+        console.log(Solve(args));
+    }
+
+</script>
+<body onload ="HandleSolveIO()">
+    
+</body>
+</html>

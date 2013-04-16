@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Check Brackets</title>
+    <!--Write a JavaScript function to check if in a given 
+        expression the brackets are put correctly.-->
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+    <p>Write a JavaScript function to check if in a given 
+        expression the brackets are put correctly.</p>
+	<a href="#" onclick="onButtonClick()">Check expression?</a>
+    <input type="text" id="tb-word"/>
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+    <script>
+        //Task starts here:
+        function onButtonClick() {
+            var str = jsConsole.read("#tb-word")
+            var restricted = "*/.,+-";
+            var counter = 0;
+            for (var i = 0; i < str.length; i++) {
+
+                //Checks if the current char is '(' and if the next isn't some of the restricted */.,
+                if (str[i] == '(') {
+                    counter++;
+                    if (restricted.substr(0, 4).indexOf(str[i + 1]) > 0) {
+                        break;
+                    }
+                }
+                    //check if he current char is ')' and if the previous isn't some of the restriced */.,+-
+                else if (str[i] == ')' && restricted.indexOf(str[i - 1]) < 0) {
+                    counter--;
+                }
+                if (counter < 0) {
+                    break;
+                }
+            }
+            if (counter == 0) {
+                jsConsole.writeLine("Correct expression.");
+            }
+            else {
+                jsConsole.writeLine("Incorrect expression.");
+            }
+        }
+    </script>	
+</body>
+</html>
+

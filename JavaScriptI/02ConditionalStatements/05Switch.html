@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>DigitsNames</title>
+        <!-- Write script that asks for a digit and depending on the 
+            input shows the name of that digit (in English) using a switch statement.-->
+        <link href="styles/js-console.css" rel="stylesheet" />        
+        <style>
+            label
+            {
+                font-family: 'Segoe UI';
+                margin-left: 20px;
+            }
+            input[type=text]
+            {
+                border: 1px solid black;
+                padding: 5px;
+                width: 60px;
+                background-color: black;
+                color: white;
+                font-family: 'Segoe UI'; 
+                margin-bottom: 5px;
+            }
+            a
+            {
+                color: black;
+                border: 1px solid black;
+                padding: 2px 10px; 
+                text-decoration: none; 
+                display: inline-block; 
+                font-family: 'Segoe UI';
+                margin: 15px 0 15px 10px;
+            }
+            a:hover
+            {
+                text-decoration: underline;
+            }
+            #js-console
+            {
+                margin-left: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <label for="numberOne">Input number from 0-9: </label>
+        <input type="text" id="numberOne"/>
+
+        <a href="#" onclick="DigitsNames()">Type digit</a>
+
+        <div id="js-console"></div>
+        <script src="scripts/js-console.js"></script>
+        <script>
+
+            function DigitsNames()
+            {
+                var num = jsConsole.readFloat("#numberOne");
+                switch (num)
+                {
+                    case 0:
+                        jsConsole.writeLine("Zero");
+                        break;
+                    case 1:
+                        jsConsole.writeLine("One");
+                        break;
+                    case 2:
+                        jsConsole.writeLine("Two");
+                        break;
+                    case 3:
+                        jsConsole.writeLine("Three");
+                        break;
+                    case 4:
+                        jsConsole.writeLine("Four");
+                        break;
+                    case 5:
+                        jsConsole.writeLine("Five");
+                        break;
+                    case 6:
+                        jsConsole.writeLine("Six");
+                        break;
+                    case 7:
+                        jsConsole.writeLine("Seven");
+                        break;
+                    case 8:
+                        jsConsole.writeLine("Eight");
+                        break;
+                    case 9:
+                        jsConsole.writeLine("Nine");
+                        break;
+                    default:
+                        jsConsole.writeLine("Invalid number!");
+                        break;
+                }
+            }
+        </script>
+    </body>
+</html>

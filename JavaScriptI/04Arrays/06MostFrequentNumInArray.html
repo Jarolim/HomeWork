@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Most frequent number in array</title>
+    <!--Write a program that finds the most frequent number in an array. 
+        Example: {4, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9, 3}  4 (5 times)-->
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+    <p>Write a program that finds the most frequent number in an array.</p>
+	<a href="#" onclick="onButtonClick()">Find the most frequent number!</a>
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+    <script>
+        function onButtonClick() {
+            var arr = new Array(4, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9, 3);
+            var array = new Array(arr.length);
+            for (var i = 0; i < arr.length; i++) {
+                array[i] = arr[i];
+            }
+            // Selection Sort
+            for (var i = 0; (i < arr.length - 1) ; i++) {
+                var small = arr[i];
+                var count = i;
+                for (var j = i + 1; j < arr.length; j++) {
+                    if (arr[j] < small) {
+                        small = arr[j];
+                        count = j;
+                    }
+                }
+                if (count != i) {
+                    arr[count] = arr[i];
+                    arr[i] = small;
+                }
+            }
+            // Maximal sequence
+            var len = 1;
+            var bestLen = 0;
+            var bestNumber = 0;
+            for (var i = 0; i < arr.length - 1; i++) {
+                if (arr[i] == arr[i + 1]) {
+                    len++;
+                }
+                else {
+                    if (len > bestLen) {
+                        bestNumber = arr[i];
+                        bestLen = len;
+                    }
+                    len = 1;
+                }
+            }
+            if (len > bestLen) {
+                bestLen = len;
+                bestNumber = arr[arr.length - 1];
+            }
+            // Print the array
+            jsConsole.write("{");
+            for (var i = 0; i < arr.length - 1; i++) {
+                jsConsole.write(array[i] + ",");
+            }
+            jsConsole.write(array[arr.length - 1] + "} → ");
+            // Print the result
+            jsConsole.write(bestNumber + " (" + bestLen + " times)");
+        }
+    </script>
+</body>
+</html>

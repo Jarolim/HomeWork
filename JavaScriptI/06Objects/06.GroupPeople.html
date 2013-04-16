@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Group people</title>
+    <!--Write a function that groups an array of persons by age, 
+        first or last name. The function must return an associative 
+        array, with keys - the groups, and values -arrays with persons in this groups
+           Use function overloading (i.e. just one function).-->
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+    <p>Write a function that groups an array of persons by age, 
+        first or last name. The function must return an associative 
+        array, with keys - the groups, and values -arrays with persons in this groups
+           Use function overloading (i.e. just one function)</p>
+    <div>The array is: [10,2,3,4,5,6,7,8,9,10]</div>
+    <div>Check based on index. Pleace enter index!</div>
+    <input type="text" id="tb-number"/>
+	<a href="#" onclick="checkTheBigger()">Find the most frequent number!</a>
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+    <script>
+        function group(arr, prpt) {
+
+            var groupedArr = [];
+
+            var finalArray = [];
+
+            if (prpt == "age") {
+
+                var reppeatlessElements = []; //array with reppeatless elements
+
+                for (var i = 0; i < arr.length; i++) {
+
+                    var reppeat = false; //checks if the element reppeats
+
+                    for (var j = 0; j < i; j++) {
+                        if (arr[i].age == arr[j].age) {
+                            reppeat = true;
+                            break; //if element reppeats break the iteration
+                        }
+                    }
+
+                    if (reppeat == false) { //if element does not reppeat push it to the reppeatless array
+                        reppeatlessElements.push(arr[i]);
+                    }
+                }
+
+                for (var i = 0; i < reppeatlessElements.length; i++) {
+                    var tempArr = [];
+
+                    for (var j = 0; j < arr.length; j++) {
+                        if (reppeatlessElements[i].age == arr[j].age) {
+                            tempArr.push(arr[j]);
+                            //console.log(reppeatlessElements[i]);
+                            //console.log(arr[i]);
+                        }
+                    }
+                    groupedArr.push(tempArr);
+                }
+
+                for (var i = 0; i < groupedArr.length; i++) {
+                    finalArray.push({ Key: groupedArr[i][0].age, Value: groupedArr[i] });
+                }
+
+            }
+            else // if prpt is "firstname"
+            {
+                var reppeatlessElements = []; //array with reppeatless elements
+
+                for (var i = 0; i < arr.length; i++) {
+
+                    var reppeat = false; //checks if the element reppeats
+
+                    for (var j = 0; j < i; j++) {
+                        if (arr[i].firstname == arr[j].firstname) {
+                            reppeat = true;
+                            break; //if element reppeats break the iteration
+                        }
+                    }
+
+                    if (reppeat == false) { //if element does not reppeat push it to the reppeatless array
+                        reppeatlessElements.push(arr[i]);
+                    }
+                }
+
+                for (var i = 0; i < reppeatlessElements.length; i++) {
+                    var tempArr = [];
+
+                    for (var j = 0; j < arr.length; j++) {
+                        if (reppeatlessElements[i].firstname == arr[j].firstname) {
+                            tempArr.push(arr[j]);
+                        }
+                    }
+                    groupedArr.push(tempArr);
+                }
+
+                for (var i = 0; i < groupedArr.length; i++) {
+                    finalArray.push({ Key: groupedArr[i][0].firstname, Value: groupedArr[i] });
+                }
+            }
+
+            return finalArray;
+        }
+
+        //----------------DEBUG---------------------//
+        var persons = [
+        { firstname: "Gosho", lastname: "Petrov", age: 32 },
+        { firstname: "Bay", lastname: "Ivan", age: 12 },
+        { firstname: "Bay", lastname: "Ivan", age: 80 },
+        { firstname: "Bay", lastname: "Ivan", age: 33 },
+        { firstname: "sad", lastname: "dsadd", age: 32 },
+        { firstname: "Gosdddddddddho", lastname: "Peaaatrov", age: 32 },
+        { firstname: "Zheko", lastname: "Junior", age: 1 }];
+
+        jsConsole.writeLine("grouprd by age");
+
+        var a = group(persons, "age");
+
+        for (var i in a) {
+            jsConsole.writeLine(a[i].Key);
+        }
+
+        jsConsole.writeLine("grouprd by firstname");
+
+        var b = group(persons, "firstname");
+
+        for (var i in b) {
+            jsConsole.writeLine(b[i].Key);
+        }
+    </script>
+</body>
+</html>

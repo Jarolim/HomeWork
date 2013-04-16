@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Point In Circle And Out Of Rectangle</title>
+    <!--Write an expression that checks for given point (x, y) if it is 
+        within the circle K( (1,1), 3) and out of the rectangle 
+        R(top=1, left=-1, width=6, height=2).-->
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+    <label for="tb-XCoord">Enter X Coordinate of the Number: </label>
+	<input type="text" id="tb-XCoord"/>
+	<br />
+    <label for="tb-YCoord">Enter Y Coordinate of the Number: </label>
+	<input type="text" id="tb-YCoord"/>
+	<br />
+	<a href="#" onclick="onButtonClickFindPoint()">Find if Point is in the Circle and Out Of The Rectangle!</a>
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+    <script>
+        function onButtonClickFindPoint() {
+            var xCoordinate = jsConsole.readFloat("#tb-XCoord");
+            var yCoordinate = jsConsole.readFloat("#tb-YCoord");
+            var pitagor = Math.sqrt(((xCoordinate - 1) * (xCoordinate - 1)) + ((yCoordinate - 1) * (yCoordinate - 1)));
+            if (pitagor <= 3.0)
+            {
+                if (xCoordinate <= -1 || yCoordinate <= -1 || yCoordinate > 1)
+                {
+                    jsConsole.writeLine("Your point is in the Circle and Out Of The Rectangle.");
+                }
+                else
+                {
+                    jsConsole.writeLine("Your point is in the Circle and in The Rectangle.");
+                }
+            }
+            else
+            {
+                if (xCoordinate >= -1 && xCoordinate <= 5 && yCoordinate >= -1 && yCoordinate <= 1)
+                {
+                    jsConsole.writeLine("Your point is Out Of the Circle, but in the Rectangle");
+                }
+                else
+                {
+                    jsConsole.writeLine("Your point is Out of the Circle and Out of the Rectangle");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

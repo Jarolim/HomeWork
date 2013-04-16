@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Min and max numbers</title>
+    <!--Write a script that finds the 
+        max and min number from a sequence of numbers.-->
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+       <p>Write a script that finds the 
+        max and min number from a sequence of numbers.</p> 
+    <a href="#" class="js-console-btn" onclick="onButtonClick()">Click to execute the program!</a>
+        <div id="js-console"></div>
+        <script src="scripts/js-console.js"></script>
+        <script>
+            //Task starts here:
+            function onButtonClick() {
+                var arr = new Array(-5, 99,54, 122, -66,988);
+                var max = arr[0];
+                var min = arr[0];
+                for (var i = 0; i < arr.length ; i++) {
+                    if (min > arr[i]) {
+                        min = arr[i];
+                    }
+
+                    if (max < arr[i]) {
+                        max = arr[i]
+                    }
+                }
+                jsConsole.writeLine("Min= " + min);
+                jsConsole.writeLine("Max= " + max);
+
+            }
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+div {
+	float: left;
+	position: absolute;
+}
+
+.shadow-left {
+	background-image: url(down-left.png);
+	width: 7px;
+	height: 7px;
+	position: absolute;
+	left: 0px;
+	bottom: -7px;
+}
+
+img {
+	position: relative;
+}
+
+.shadow-mid {
+	background:url(down-mid.png) repeat-x;
+	height:7px;
+	position:absolute;
+	left:7px;
+	right:1px;
+}
+
+.shadow-right {
+	background-image:url(down-right.png);
+	height:7px;
+	width:7px;
+	position:absolute;
+	right:-6px;
+}
+
+.side-top {
+	background-image:url(side-top.png);
+	height:8px;
+	width:6px;
+	position:absolute;
+	top:0;
+	right:-6px;
+}
+
+.side-mid {
+	background:url(side-mid.png) repeat-y;
+	width:6px;
+	position:absolute;
+	top:8px;
+	right:-6px;
+	bottom:0px;
+}
+
+#secondimg {
+	left: 50%;
+}
+
+#thirdimg {
+	top: 60%
+}
+
+#fourthimg {
+	left: 50%;
+	top: 60%;
+}

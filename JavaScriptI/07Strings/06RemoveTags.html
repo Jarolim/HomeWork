@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Remove tags</title>
+    <!--Write a function that extracts the content 
+        of a html page given as text. The function 
+        should return anything that is in a tag, without the tags:-->
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+    <p>Write a function that extracts the content of a html page 
+        given as text. The function 
+        should return anything that is in a tag, without the tags:</p>
+	
+    <label for="tb-text">Enter text: </label>
+    
+    <input type="text" id="tb-text" />
+    
+    <a href="#" onclick="onButtonClick()">Remove tags!</a>
+	
+    <div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+    <script>
+        function onButtonClick() {
+
+            var txt = jsConsole.read("#tb-text");
+            var temp = "";
+            var firstIndex = txt.indexOf('>');
+            var secondIndex = txt.indexOf('<', 1);
+            while (firstIndex != -1 && secondIndex != -1) {
+                temp = (removeTags(txt, firstIndex, secondIndex));
+                if (temp.length != 0) {
+                    //.Trim removes white spaces
+                    jsConsole.write(temp);
+                }
+                firstIndex = txt.indexOf('>', firstIndex + 1);
+                secondIndex = txt.indexOf('<', secondIndex + 1);
+            }
+
+        }
+
+        function removeTags(text, start, end) {
+            var str = "";
+            for (var i = start + 1; i < end; i++) {
+                str = str.concat(text[i]);
+            }
+            return str;
+        }
+
+       // function onButtonClick() {
+       //     var input = "<html><head><title>Sample site</title></head><body><div>text<div>more text</div>and more...</div>in body</body></html>";
+       //     jsConsole.writeLine("&lt;html&gt;&lt;head&gt;&lt;title&gt;Sample site&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div&gt;text&lt;div&gt;more text&lt;/div&gt;and more...&lt;/div&gt;in body&lt;/body&gt;&lt;/html&gt;");
+       //     var str = "";
+       //     var i;
+       //     var startIndex;
+       //     var endIndex;
+       //     for (i = 0; i < input.length; i++) {
+       //         startIndex = input.indexOf("<", i);
+       //         endIndex = input.indexOf(">", i + 1);
+       //         str += input.substring(i, startIndex);
+       //         i = endIndex;
+       //     }
+       //     jsConsole.writeLine(str);
+       // }
+    </script>
+</body>
+</html>

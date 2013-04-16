@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>SortedThreeNumbers</title>
+        <!-- Sort 3 real values in descending order using nested if statements.-->
+        <link href="styles/js-console.css" rel="stylesheet" />      
+        <style>
+            label
+            {
+                font-family: 'Segoe UI';
+                margin-left: 20px;
+            }
+            input[type=text]
+            {
+                border: 1px solid black;
+                padding: 5px;
+                width: 60px;
+                background-color: black;
+                color: white;
+                font-family: 'Segoe UI'; 
+                margin-bottom: 5px;
+            }
+            a
+            {
+                color: black;
+                border: 1px solid black;
+                padding: 2px 10px; 
+                text-decoration: none; 
+                display: inline-block; 
+                font-family: 'Segoe UI';
+                margin: 15px 0 15px 10px;
+            }
+            a:hover
+            {
+                text-decoration: underline;
+            }
+            #js-console
+            {
+                margin-left: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <label for="numberOne">First number: </label>
+        <input type="text" id="numberOne"/>
+
+        <label for="numberTwo">Second number: </label>
+        <input type="text" id="numberTwo"/>
+
+        <label for="numberThree">Third number: </label>
+        <input type="text" id="numberThree"/>
+
+        <a href="#" onclick="SortedThreeNumbers()">SortedThreeNumbers</a>
+
+        <div id="js-console"></div>
+        <script src="scripts/js-console.js"></script>
+        <script>
+
+            function SortedThreeNumbers() {
+                var firstNum = jsConsole.readFloat("#numberOne");
+                var secondNum = jsConsole.readFloat("#numberTwo");
+                var thirdNum = jsConsole.readFloat("#numberThree");
+                var buffer = 0;
+
+                if (firstNum < secondNum)
+                {
+                    if (thirdNum < firstNum)
+                    {
+                        buffer = firstNum;
+                        firstNum = thirdNum;
+                        thirdNum = buffer;
+                    }
+                }
+                else
+                {
+                    if (secondNum < thirdNum)
+                    {
+                        buffer = firstNum;
+                        firstNum = secondNum;
+                        secondNum = buffer;
+                    }
+                    else
+                    {
+                        buffer = firstNum;
+                        firstNum = thirdNum;
+                        thirdNum = buffer;
+                    }
+                }
+                if (thirdNum < secondNum)
+                {
+                    buffer = secondNum;
+                    secondNum = thirdNum;
+                    thirdNum = buffer;
+                }
+
+                var printStr = "The the sorted numbers are: ";
+                printStr += firstNum + " ";
+                printStr += secondNum + " ";
+                printStr += thirdNum;
+
+                jsConsole.writeLine(printStr);
+            }
+        </script>
+    </body>
+</html>

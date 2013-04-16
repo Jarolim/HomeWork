@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<script>
+    function Solve(args) {
+        MandN = args[0].split(' ');
+        RandC = args[1].split(' ');
+        N = parseInt(MandN[0]);
+        M = parseInt(MandN[1]);
+        R = parseInt(RandC[0]);
+        C = parseInt(RandC[1]);
+
+        var fieldNums = new Array(N * M);
+
+        var fieldLRUD = new Array(N * M);
+
+        var fieldLetters = [];
+        var help = [];
+
+        var startField = [R, C];
+
+        for (var i = 0; i < fieldNums.length; i++) {
+            fieldNums[i] = parseInt(i + 1);
+        }
+
+        for (var i = 2; i < N + 2; i++) {
+            if (i === N+1) {
+                help = args[i].split("");
+            }
+            else {
+                help = args[i].split("") + ',';
+            }           
+            fieldLetters = fieldLetters + help;
+        }
+
+        fieldLetters = fieldLetters.split(',');
+
+        var startIndex = (R+1)*(C+1);
+
+        var sum = 0;
+
+        var helpSum = 0;
+        var b = startIndex;
+
+        while (b <= M*N) {
+
+            if (fieldLetters[b - 1] === "l") {
+                helpSum = parseInt(fieldNums[b - 1]) + parseInt(fieldNums[b - 2]);
+                b = b - 1;
+                sum = sum + helpSum;
+            }
+            if (fieldLetters[b - 1] === "r") {
+                helpSum = parseInt(fieldNums[b - 1]) + parseInt(fieldNums[b]);
+                b = b + 1;
+                sum = sum + helpSum;
+            }
+            if (fieldLetters[b - 1] === "d") {
+                helpSum = parseInt(fieldNums[b - 1]) + parseInt(fieldNums[b + M - 1]);
+                b = b + M;
+                sum = sum + helpSum;
+            }
+            if (fieldLetters[b - 1] === "u") {
+                helpSum = parseInt(fieldNums[b - 1]) + parseInt(fieldNums[b - M - 1]);
+                b = b - M;
+                sum = sum + helpSum;
+            }
+            if (b > M*N) {
+                break;
+            }
+        }       
+        return "lost 1";
+    }
+
+    function HandleSolveIO() {
+        var args = [];
+        args[0] = "3 4";
+        args[1] = "1 3";
+        args[2] = "lrrd";
+        args[3] = "dlll";
+        args[4] = "rddd";
+        console.log(Solve(args));
+    }
+
+</script>
+<body onload ="HandleSolveIO()">
+    
+</body>
+</html>

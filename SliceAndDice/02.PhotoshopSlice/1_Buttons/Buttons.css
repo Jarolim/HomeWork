@@ -1,0 +1,43 @@
+body { 
+}
+a {
+    display:block;
+    clear:both;
+    color:black;
+}
+    a span:hover {
+        text-decoration:underline;
+    }
+
+button {
+    padding:0;
+    margin: 10px;
+    display:block;
+    border:0;
+    cursor:pointer;
+    clear:both;
+    border-radius:30px;
+    box-shadow:rgba(128, 128, 128, 0.3) 2px 2px 2px;
+}
+
+.left {
+    display:inline-block;
+    float:left;
+    background: url("images/left.png");
+    width:22px;
+    height:47px;
+}
+.text {
+    font-size:18px;
+    line-height:47px;
+    padding:0 20px;
+    float:left;
+    background: url("images/middle.png") repeat-x;
+}
+.right {
+    display:inline-block;
+    float:left;
+    background: url("images/right.png");
+    width:22px;
+    height:47px;
+}

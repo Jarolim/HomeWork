@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>GreatestFromFiveVars</title>
+        <!-- Write a script that finds the greatest of given 5 variables. -->
+        <link href="styles/js-console.css" rel="stylesheet" />
+        <style>
+            label
+            {
+                font-family: 'Segoe UI';
+                margin-left: 20px;
+            }
+            input[type=text]
+            {
+                border: 1px solid black;
+                padding: 5px;
+                width: 40px;
+                background-color: black;
+                color: white;
+                font-family: 'Segoe UI'; 
+                margin-bottom: 5px;
+            }
+            a
+            {
+                color: black;
+                border: 1px solid black;
+                padding: 2px 10px; 
+                text-decoration: none; 
+                display: inline-block; 
+                font-family: 'Segoe UI';
+                margin: 15px 0 15px 10px;
+            }
+            a:hover
+            {
+                text-decoration: underline;
+            }
+            #js-console
+            {
+                margin-left: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <label for="number1">First number: </label>
+        <input type="text" id="number1"/>
+        <label for="number2">Second number: </label>
+        <input type="text" id="number2"/>
+        <label for="number3">Third number: </label>
+        <input type="text" id="number3"/>
+        <label for="number4">Fourth number: </label>
+        <input type="text" id="number4"/>
+        <label for="number5">Fifth number: </label>
+        <input type="text" id="number5"/>
+
+        <a href="#" onclick="GreatestFromFiveVars()">Greatest of 5</a>
+
+        <div id="js-console"></div>
+        <script src="scripts/js-console.js"></script>
+        <script>
+
+            function GreatestFromFiveVars() {
+                var firstNum = jsConsole.readFloat("#number1");
+                var secondNum = jsConsole.readFloat("#number2");
+                var thirdNum = jsConsole.readFloat("#number3");
+                var forthNum = jsConsole.readFloat("#number4");
+                var fifthNum = jsConsole.readFloat("#number5");
+                var greatestOfFive = firstNum;
+
+                if (secondNum > greatestOfFive) {
+                    greatestOfFive = secondNum;
+                }
+                if (thirdNum > greatestOfFive) {
+                    greatestOfFive = thirdNum;
+                }
+                if (forthNum > greatestOfFive) {
+                    greatestOfFive = forthNum;
+                }
+                if (fifthNum > greatestOfFive) {
+                    greatestOfFive = fifthNum;
+                }
+                jsConsole.writeLine("The Greatest is: "+ greatestOfFive);
+            }
+        </script>
+    </body>
+</html>

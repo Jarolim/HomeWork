@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Shapes</title>
+    <!--Write functions for working with shapes in  standard Planar coordinate system
+        Points are represented by coordinates P(X, Y)
+        Lines are represented by two points, marking their beginning and ending
+        L(P1(X1,Y1),P2(X2,Y2))
+        Calculate the distance between two points
+        Check if three segment lines can form a triangle.-->
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+    <p>Write functions for working with shapes in  standard Planar coordinate system
+        Points are represented by coordinates P(X, Y)
+        Lines are represented by two points, marking their beginning and ending
+        L(P1(X1,Y1),P2(X2,Y2))
+        Calculate the distance between two points
+        Check if three segment lines can form a triangle</p>	
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>	
+    <script>
+        //Task starts here:
+
+        //Points are represented by coordinates P(X, Y)
+        function getPoint(x, y) {
+            return { x: x, y: y };
+        }
+
+        //Lines are represented by two points, marking their beginning and ending
+        function getLine(point1, point2) {
+            return { pointA: point1, pointB: point2 };
+        }
+
+        //Calculate the distance between two points
+        function calculateDistance(point1, point2) {
+            return parseInt(Math.abs(point1.x - point2.x) * Math.abs(point1.x - point2.x)
+            + Math.abs(point1.y - point2.y) * Math.abs(point1.y - point2.y));
+        }
+
+        //Check if three segment lines can form a triangle
+        function IsPossibleFormingATriangle(line1, line2, line3) {
+            var a = calculateDistance(line1.pointA, line1.pointB);
+            var b = calculateDistance(line2.pointA, line2.pointB);
+            var c = calculateDistance(line3.pointA, line3.pointB);
+            if (a + b > c && a + c > b && b + c > a) {
+                jsConsole.writeLine("True");
+            } else {
+                jsConsole.writeLine("False");
+            }
+        }
+
+        var point1 = getPoint(5, 3);
+        var point2 = getPoint(3, 5);
+        var point3 = getPoint(1, 2);
+
+        var line1 = getLine(point1, point2);
+        var line2 = getLine(point2, point3);
+        var line3 = getLine(point1, point3);
+
+        var distance = calculateDistance(point3, point2);
+        jsConsole.writeLine("The distance between the points is : " + distance);
+
+        jsConsole.write("It is possible to format a triangle : ");
+        IsPossibleFormingATriangle(line1, line2, line3);
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>LexicographicallyProperties</title>
+    <!--Write a script that finds the lexicographically smallest and largest
+         property in document, window and navigator objects-->
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+       <p>Write a script that finds the 
+           lexicographically smallest and largest property in document, window and navigator objects.</p> 
+        <div id="js-console"></div>
+        <script src="scripts/js-console.js"></script>
+        <script>
+            //Task starts here:
+            findSmallest(window);
+            findBiggest(window);
+            findSmallest(navigator);
+            findBiggest(navigator);
+            findSmallest(document);
+            findBiggest(document);
+
+            function findSmallest(object) {
+                var smallest = 'zzz';
+                for (var property in object) {
+                    if (property < smallest) {
+                        smallest = property;
+                    }
+                }
+                jsConsole.writeLine("The smallest lexicographically property in " + object + " is " + smallest);
+            }
+            function findBiggest(object) {
+                var biggest = 'aaa';
+                for (var property in object) {
+                    if (property > biggest) {
+                        biggest = property;
+                    }
+                }
+                jsConsole.writeLine("The biggest lexicographically property in " + object + " is " + biggest);
+            }
+    </script>
+</body>
+</html>

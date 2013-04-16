@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Appearances in an array</title>
+    <!--Write a function that counts how many times given number appears in given array.
+         Write a test function to check if the function is working correctly.-->
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+    <p>Write a function that counts how many times given number
+         appears in given array. Write a test function to check if the function is working correctly.</p>
+    <div>The array is : [1,2,3,6,5,4,8,5,5,6,4,1,2,3,7,6,4,3,12,4,2]</div>
+    <input type="text" id="tb-number"/>
+	<a href="#" onclick="clickButton()">Count appearances!</a>
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+    <script>
+        function clickButton() {
+            var number = jsConsole.readFloat("#tb-number");
+
+            var newArray = [1,2,3,6,5,4,8,5,5,6,4,1,2,3,7,6,4,3,12,4,2];
+
+            var count = 0;
+
+            for (var i = 0; i <= newArray.length - 1; i++) {
+                if (number == newArray[i]) {
+                    count++;
+                }
+            }
+            jsConsole.writeLine("Count is:" + count);
+        }
+    </script>
+</body>
+</html>

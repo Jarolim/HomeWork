@@ -1,0 +1,15 @@
+2
+circle (0,0,0) 20
+area
+volume
+rotate (0,0,0) 312
+area
+volume
+end
+cylinder (0,0,0) (0,0,20) 10
+area
+volume
+rotate (0,0,0) 312
+area
+volume
+end

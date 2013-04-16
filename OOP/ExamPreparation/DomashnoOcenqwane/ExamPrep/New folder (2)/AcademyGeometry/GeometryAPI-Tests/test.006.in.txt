@@ -1,0 +1,30 @@
+8
+triangle (20,0,5) (20,20,5) (0,0,5)
+area
+scale (0,0,5) 2
+end
+circle (0,0,0) 1
+end
+triangle (0,0,0) (1,1,1) (0,0,1)
+end
+triangle (0,0,0) (1,1,1) (0,0,1)
+end
+triangle (0,0,0) (1,1,1) (0,0,1)
+end
+circle (-5,-1,10) 10
+rotate (0,0,0) 180
+translate (-10,-2,0)
+center
+end
+segment (-1,-1,-1) (-20,5,3.3)
+translate (1,1,1)
+area
+center
+end
+cylinder (0,0,0) (10,10,10) 50
+area
+volume
+translate (10,10,10)
+area
+volume
+end

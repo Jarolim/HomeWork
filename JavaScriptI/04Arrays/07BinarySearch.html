@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Binary search</title>
+    <!--Write a program that finds the index of given element in a sorted 
+        array of integers by using the binary search algorithm (find it in Wikipedia)-->
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+    <p>Write a program that finds the index of given element in a sorted 
+        array of integers by using the binary search algorithm (find it in Wikipedia)</p>
+    <div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+    <script>
+        function binarySearching(arr, num) {
+            var indexMin = 0;
+            var indexMax = arr.length - 1;
+            var indexMid = 0;
+            while (indexMax >= indexMin) {
+                indexMid = parseInt((indexMin + indexMax) / 2);
+                if (num > arr[indexMid]) {
+                    indexMin = indexMid + 1;
+                }
+                else if (num < arr[indexMid]) {
+                    indexMax = indexMid - 1;
+                }
+                else
+                {
+                    return indexMid;
+                }
+            }
+            return -1;
+        }
+        var arr = new Array(1,2,7,5,4,41,66,3,4);
+        jsConsole.writeLine("The index of the number in the array is: " + binarySearching(arr, 41));
+    </script>
+</body>
+</html>

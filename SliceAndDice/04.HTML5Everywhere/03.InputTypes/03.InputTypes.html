@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>03.Inputs</title>
+    
+    <!--[if lte IE 9]>
+        <script type="text/javascript" src="scripts/fd-slider.min.js"></script>
+        <link rel="stylesheet" type="text/css" media="screen, projection" href="http://www.frequency-decoder.com/demo/fd-slider/css/fd-slider.mhtml.min.css" />
+    <![endif]-->
+    
+    <!-- Needed for Forms Feature Detection -->
+    <script type="text/javascript" src="scripts/Modernizr-2.5.3.forms.js">
+    </script>
+
+    <!-- Needed for Validation -->
+    <script type="text/javascript" src="scripts/html5Forms.js" data-webforms2-support="date, color, validation, range" data-webforms2-force-js-validation="false" data-lang="en">
+    </script>
+
+</head>
+
+<body>
+        <fieldset>
+            <legend>Input Types</legend>
+            <div>
+                <label for="range">
+                    range:
+                </label>
+                <input name="html5shim-1" id="html5shim-1" type="range" min="-10" max="10" step="0.20" title="Range: -10 to 10 in steps of 0.2" value="8.2" />
+            </div>
+
+            <div>
+                <label for="number">
+                    number:
+                </label>
+                <input name="number" type="number" id="number" required="required" pattern="\b\d+\b" />
+            </div>
+
+            <div>
+                <label for="email">
+                    email:
+                </label>
+                <input name="email" type="email" id="email" required="required" pattern="^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$" />
+            </div>
+
+            <div>
+                <label for="date">
+                    date:
+                </label>
+                <input name="date" type="date" id="date" />
+            </div>
+
+            <div>
+                <label for="color">
+                    Color: 
+                </label>
+                <input name="color" type="color" id="color" />
+            </div>
+
+            <div>
+                <label for="datetime">
+                    DateTime: 
+                </label>
+                <input name="datetime" type="datetime" id="datetime" />
+            </div>
+
+            <div>
+                <label for="month">
+                    Month: 
+                </label>
+                <input name="month" type="month" id="month" />
+            </div>
+            
+            <div>
+                <label for="week">
+                    Week: 
+                </label>
+                <input name="week" type="week" id="week" />
+            </div>
+
+            <div>
+                <label for="search">
+                    Search: 
+                </label>
+                <input name="search" type="search" id="search" />
+            </div>
+
+            <div>
+                <label for="tel">
+                    Tel: 
+                </label>
+                <input name="tel" type="tel" id="tel" required="required" pattern="\b\d\b" />
+            </div>
+
+            <div>
+                <label for="time">
+                    Time: 
+                </label>
+                <input name="time" type="time" id="time" />
+            </div>
+
+            <div>
+                <label for="url">
+                    URL: 
+                </label>
+                <input name="url" type="url" id="url"  required="required" pattern="((mailto\:|(news|(ht|f)tp(s?))\://){1}\S+)"/>
+            </div>
+
+            <input type="submit" value="Send" />
+
+        </fieldset>
+</body>
+</html>

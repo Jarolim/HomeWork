@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Return index</title>
+    <!--Write a Function that returns the index of the first element in array that is 
+        bigger than its neighbors, or -1, if there’s no such element.-->
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+    <p>Write a Function that returns the index of the first element 
+        in array that is bigger than its neighbors, or -1, if there’s no such element.</p>
+    <div>The arra is [1,2,3,4,55,6,7,8,9,10]</div>
+    <a href="#" onclick="checkIsBiggerThanNeighbours()">Execute program!</a>
+    <div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+    <script>
+        function checkIsBiggerThanNeighbours() {
+            var myArray = new Array(1,2,3,4,55,6,7,8,9,10);
+            
+            var isBigger = false;
+            for (var index = 1; index < myArray.length - 2 ;index++)
+            {
+                if ((myArray[index] > myArray[index + 1]) && (myArray[index] > myArray[index - 1]))
+                {
+                    isBigger = true;
+                    jsConsole.writeLine("The first number in given array which is bigger than his neighbours is at position " + index + " and this number is " + myArray[index]);
+                    break;
+                }
+            }
+
+            if (isBigger == false)
+            {
+                jsConsole.writeLine("-1");
+            }
+        }
+    </script>
+</body>
+</html>

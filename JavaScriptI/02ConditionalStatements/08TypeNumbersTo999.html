@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>TypeNumbersTo999</title>
+        <!-- Write a script that converts a number in the range [0...999] 
+        to a text corresponding to its English pronunciation. Examples:
+        0 -> "Zero"
+        273 -> "Two hundred seventy three"
+        400 -> "Four hundred"
+        501 -> "Five hundred and one"
+        711 -> "Seven hundred and eleven" -->
+        <link href="styles/js-console.css" rel="stylesheet" />
+        <style>
+            label
+            {
+                font-family: 'Segoe UI';
+                margin-left: 20px;
+            }
+            
+            input[type=text]
+            {
+                border: 1px solid black;
+                padding: 5px;
+                width: 60px;
+                background-color: black;
+                color: white;
+                font-family: 'Segoe UI';
+                margin-bottom: 5px;
+            }
+            
+            a
+            {
+                color: black;
+                border: 1px solid black;
+                padding: 2px 10px;
+                text-decoration: none;
+                display: inline-block;
+                font-family: 'Segoe UI';
+                margin: 15px 0 15px 10px;
+            }
+            
+            a:hover
+            {
+                text-decoration: underline;
+            }
+        
+            #js-console
+            {
+                margin-left: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <label for="numberOne">Type number form [0 to 999]: </label>
+        <input type="text" id="numberOne" />
+        
+        <a href="#" onclick="SayNumbersTo999()">Say Number</a>
+            
+        <div id="js-console"></div>
+        <script src="scripts/js-console.js"></script>
+        <script>
+
+            function SayNumbersTo999() {
+                var enter = jsConsole.readFloat("#numberOne");
+
+                var hundreds = parseInt(enter % 10);
+                enter /= 10;
+                var tens = parseInt(enter % 10);
+                enter /= 10;
+                var ones = parseInt(enter % 10);
+
+                switch (ones) {
+                    case 1:
+                        jsConsole.write("One hundred ");
+                        if (hundreds == 0 && tens == 0) {
+                            jsConsole.writeLine();
+                            break;
+                        }
+                        break;
+                    case 2:
+                        jsConsole.write("Two hundred ");
+                        break;
+                    case 3:
+                        jsConsole.write("Three hundred ");
+                        break;
+                    case 4:
+                        jsConsole.write("Four hundred ");
+                        break;
+                    case 5:
+                        jsConsole.write("Five hundred ");
+                        break;
+                    case 6:
+                        jsConsole.write("Six hundred ");
+                        break;
+                    case 7:
+                        jsConsole.write("Seven hundred ");
+                        break;
+                    case 8:
+                        jsConsole.write("Eight hundred ");
+                        break;
+                    case 9:
+                        jsConsole.write("Nine hundred ");
+                        break;
+                    case 0:
+                        break;
+                }
+                switch (tens) {
+                    case 1:
+                        if (ones == 0)
+                            break;
+                        else
+                            jsConsole.write("and ");
+                        break;
+                    case 2:
+                        jsConsole.write("Twenty ");
+                        if (hundreds == 0) {
+                            jsConsole.writeLine();
+                            break;
+                        }
+                        else
+                            break;
+                    case 3:
+                        jsConsole.write("Thirty ");
+                        if (hundreds == 0) {
+                            jsConsole.writeLine();
+                            break;
+                        }
+                        break;
+                    case 4:
+                        jsConsole.write("Fourty ");
+                        if (hundreds == 0) {
+                            jsConsole.writeLine();
+                            break;
+                        }
+                        break;
+                    case 5:
+                        jsConsole.write("Fifty ");
+                        if (hundreds == 0) {
+                            jsConsole.writeLine();
+                            break;
+                        }
+                        break;
+                    case 6:
+                        jsConsole.write("Sixty ");
+                        if (hundreds == 0) {
+                            jsConsole.writeLine();
+                            break;
+                        }
+                        break;
+                    case 7:
+                        jsConsole.write("Seventy ");
+                        if (hundreds == 0) {
+                            jsConsole.writeLine();
+                            break;
+                        }
+                        break;
+                    case 8:
+                        jsConsole.write("Eighty ");
+                        if (hundreds == 0) {
+                            jsConsole.writeLine();
+                            break;
+                        }
+                        break;
+                    case 9:
+                        jsConsole.write("Ninety ");
+                        if (hundreds == 0) {
+                            jsConsole.writeLine();
+                            break;
+                        }
+                        break;
+                    case 0:
+                        if (ones == 0)
+                            break;
+                        else if (hundreds == 0)
+                            break;
+                        else
+                            jsConsole.write("and ");
+                        break;
+                    default:
+                        break;
+                }
+
+                if (tens == 1) {
+                    switch (hundreds) {
+                        case 0:
+                            if (tens == 0 && ones == 0)
+                                jsConsole.writeLine("zero");
+                            else if (tens == 1)
+                                jsConsole.writeLine("Ten ");
+                            else
+                                break;
+                            break;
+                        case 1:
+                            jsConsole.writeLine("Eleven");
+                            break;
+                        case 2:
+                            jsConsole.writeLine("Twelve");
+                            break;
+                        case 3:
+                            jsConsole.writeLine("Thirteen");
+                            break;
+                        case 4:
+                            jsConsole.writeLine("Fourteen");
+                            break;
+                        case 5:
+                            jsConsole.writeLine("Fifteen");
+                            break;
+                        case 6:
+                            jsConsole.writeLine("Sixteen");
+                            break;
+                        case 7:
+                            jsConsole.writeLine("Seventeen");
+                            break;
+                        case 8:
+                            jsConsole.writeLine("Eighteen");
+                            break;
+                        case 9:
+                            jsConsole.writeLine("Nineteen");
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                else {
+                    switch (hundreds) {
+                        case 0:
+                            if (tens == 0 && ones == 0) {
+                                jsConsole.writeLine("Zero");
+                            }
+                            break;
+                        case 1:
+                            jsConsole.writeLine("One");
+                            break;
+                        case 2:
+                            jsConsole.writeLine("Two");
+                            break;
+                        case 3:
+                            jsConsole.writeLine("Three");
+                            break;
+                        case 4:
+                            jsConsole.writeLine("Four");
+                            break;
+                        case 5:
+                            jsConsole.writeLine("Five");
+                            break;
+                        case 6:
+                            jsConsole.writeLine("Six");
+                            break;
+                        case 7:
+                            jsConsole.writeLine("Seven");
+                            break;
+                        case 8:
+                            jsConsole.writeLine("Eight");
+                            break;
+                        case 9:
+                            jsConsole.writeLine("Nine");
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

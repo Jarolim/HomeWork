@@ -1,0 +1,15 @@
+3
+circle (69,0,0) 5
+center
+end
+circle (69,0,0) 5.5
+translate (10,0,0)
+center
+end
+cylinder (66.5,0,0) (66.5,0,10) 3
+rotate (69,0,0) 90
+rotate (69,0,0) 90
+center
+area
+volume
+end

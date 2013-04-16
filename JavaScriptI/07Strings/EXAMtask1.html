@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<script>
+    function Solve(args) {
+
+        var N = parseInt(args[0]);
+        var answer = 0;
+        var arr = [];
+        for (var i = 1; i <= N; i++) {
+            arr.push(args[i]);
+        }
+        
+        var maxSum = Number.MAX_VALUE * -1;
+        for (var i = 0; i < arr.length; i++) {
+            var thisSum = 0;
+            for (var j = i; j < arr.length; j++) {
+                thisSum += parseInt(arr[j]);
+
+                if (thisSum > maxSum) {
+                    maxSum = thisSum;
+                }
+                
+            }
+        }
+        
+      //  var maxSoFar = 0;
+      //  var maxHere = 0;
+      //  for (var i = 0; i < arr.length; i++) {
+      //      maxHere = parseInt(maxHere + parseInt(arr[i]));
+      //      maxSoFar = Math.max(maxHere, maxSoFar);
+      //  }
+
+
+
+        return maxSum;
+    }
+
+    function HandleSolveIO() {
+        var args = [];
+        args[0] = "9";
+        args[1] = "-9";
+        args[2] = "-8";
+        args[3] = "-8";
+        args[4] = "-7";
+        args[5] = "-6";
+        args[6] = "-5";
+        args[7] = "-1";
+        args[8] = "-7";
+        args[9] = "-6";
+        console.log(Solve(args));
+    }
+
+</script>
+<body onload ="HandleSolveIO()">
+    
+</body>
+</html>

@@ -1,0 +1,26 @@
+10
+circle (69,0,0) 5
+end
+circle (69,0,0) 5
+end
+circle (69,0,0) 5
+end
+circle (69,0,0) 5
+end
+circle (69,0,0) 5
+end
+circle (69,0,0) 5
+end
+circle (69,0,0) 5
+end
+circle (69,0,0) 5
+end
+circle (69,0,0) 5
+end
+cylinder (20,10,5) (10,5,2.5) 1.25
+area
+translate (1,1,1)
+center
+rotate (0,0,0) 180
+center
+end

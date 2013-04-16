@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Trapezoid's area</title>
+    <!--Write an expression that calculates trapezoid's area by given sides a and b and height h.-->
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+    <label for="tb-sideA">Enter side a: </label>
+	<input type="text" id="tb-sideA"/>
+	<br />
+    <label for="tb-sideB">Enter side b: </label>
+	<input type="text" id="tb-sideB"/>
+	<br />
+    <label for="tb-height">Enter height h: </label>
+	<input type="text" id="tb-height"/>
+	<br />
+	<a href="#" onclick="onButtonClickFindArea()">Find trapezoid's area!</a>
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+    <script>
+        function onButtonClickFindArea() {
+            var sideA = jsConsole.readFloat("#tb-sideA");
+            var sideB = jsConsole.readFloat("#tb-sideB");
+            var height = jsConsole.readFloat("#tb-height");
+            var area = ((sideA + sideB) * height) / 2;
+            jsConsole.writeLine("The area of your trapezoid is: " + area);
+        }
+    </script>
+</body>
+</html>

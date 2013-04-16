@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Print numbers from 1 to N</title>
+    <!--Write a script that prints all the numbers from 1 to N, 
+        that are not divisible by 3 and 7 at the same time-->
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+    <p>Write a script that prints all the numbers from 1 to N,
+         that are not divisible by 3 and 7 at the same time</p>
+    <label for="tb-number">Enter number N: </label>
+	<input type="text" id="tb-number"/>
+	<br />
+	<a href="#" onclick="printNumberFromOneToN()">Print numbers from 1 to N</a>
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>	
+    <script>
+        //Task starts here:
+        function printNumberFromOneToN()
+            {
+                var number = jsConsole.readFloat("#tb-number");
+
+                for (var i = 0; i <= number; i++)
+                {
+                    jsConsole.writeLine(i);
+                }            
+            }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<script>
+    function Solve(args) {
+        var q0 = parseInt(args[0]);
+        var q1 = parseInt(args[1]);
+        var q2 = parseInt(args[2]);
+        var q3 = parseInt(args[3]);
+        var rows = parseInt(args[4]);
+        var cols = parseInt(args[5]);
+
+        var result = [];
+        result.push(q0);
+        result.push(q1);
+        result.push(q2);
+        result.push(q3);
+
+        for (var i = 4; i < rows * cols; i++) {
+            result.push(result[i - 1] + result[i - 2] + result[i - 3] + result[i - 4]);
+        }
+
+        //return result.join(" ");
+
+        var stringResult = [];
+        for (var i = 1; i <= rows * cols; i++) {
+            stringResult.push(result[i - 1]);
+            if (i % cols != 0) {
+                stringResult.push(" ");
+            }
+            else {
+                stringResult.push("\n");
+            }
+        }
+        //console.log(stringResult);
+        //return stringResult.join("");
+        console.log(stringResult.join(""));
+    }
+
+    //jsConsole.writeLine(Solve([1, 2, 3, 4, 2, 8]));
+
+</script>
+<body onload ="Solve()">
+    <div id="js-console"></div>
+     <script src="scripts/js-console.js"></script>
+</body>
+</html>

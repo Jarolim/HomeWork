@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>QuadraticEquation</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+        <!-- Write a script that enters the coefficients a, b and c of a quadratic equation
+        a*x2 + b*x + c = 0
+        and calculates and prints its real roots. Note that quadratic equations may have 0, 1 or 2 real roots.
+        -->
+        <style>
+            label
+            {
+                font-family: 'Segoe UI';
+                margin-left: 20px;
+            }
+            input[type=text]
+            {
+                border: 1px solid black;
+                padding: 5px;
+                width: 60px;
+                background-color: black;
+                color: white;
+                font-family: 'Segoe UI'; 
+                margin-bottom: 5px;
+            }
+            a
+            {
+                color: black;
+                border: 1px solid black;
+                padding: 2px 10px; 
+                text-decoration: none; 
+                display: inline-block; 
+                font-family: 'Segoe UI';
+                margin: 15px 0 15px 10px;
+            }
+            a:hover
+            {
+                text-decoration: underline;
+            }
+            #js-console
+            {
+                margin-left: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <label for="numberOne">First number: </label>
+        <input type="text" id="numberOne"/>
+
+        <label for="numberTwo">Second number: </label>
+        <input type="text" id="numberTwo"/>
+
+        <label for="numberThree">Third number: </label>
+        <input type="text" id="numberThree"/>
+
+        <a href="#" onclick="QuadraticEquation()">Solve QuadraticEquation</a>
+
+        <div id="js-console"></div>
+        <script src="scripts/js-console.js"></script>
+        <script>
+
+            function QuadraticEquation() {
+                var a = jsConsole.readFloat("#numberOne");
+                var b = jsConsole.readFloat("#numberTwo");
+                var c = jsConsole.readFloat("#numberThree");
+                var D, x1, x2;
+                D = (b * b) - (4 * a * c);
+                if (a == 0)
+                {
+                    jsConsole.writeLine("This is not a quadratic equation");
+                }
+                else
+                {
+                    D = (b * b) - (4 * a * c);
+                    if (D < 0)
+                    {
+                        jsConsole.writeLine("Your quadratic equation doesn't have real roots, because the discriminant is :" + D );
+                    }
+                    else if (D == 0)
+                    {
+                        x1 = -(b / (2 * a));
+                        jsConsole.writeLine("Discriminant is 0, and root 'x1'='x2'={0} " + x1);
+                    }
+                    else if (D > 0) {
+                        x1 = (-b + Math.sqrt(D)) / 2 * a;
+                        x2 = (-b - Math.sqrt(D)) / 2 * a;
+                        jsConsole.writeLine("Root 'x1' is : " + x1);
+                        jsConsole.writeLine("Root 'x2' is : " + x2);
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

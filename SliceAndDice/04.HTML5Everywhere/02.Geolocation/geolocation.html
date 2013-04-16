@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8"/>
+<title>Geolocation - Dive Into HTML5</title>
+<!--[if lt IE 9]><script src="js/html5.js"></script><![endif]-->
+<link rel="stylesheet" href="screen.css" />
+</head>
+    <body>
+
+<p>Here is a live example of using <a href="#geo-js"><code>geoPosition.js</code></a> to attempt to get your location and display a map of your immediate surroundings:</p>
+
+<p style="margin:0 auto;width:194px" id="geo-wrapper">
+    <img src="Images/globe_man.png" alt="man with a globe for a head" width="194" height="317"/>
+          <br/><span id="live-geolocation"></span>
+</p>
+
+<script src="Scripts/jquery.js"></script>
+<script src="Scripts/modernizr.js"></script>
+<script src="Scripts/geoPosition.js"></script>
+<script src="Scripts/dih5.js"></script>
+<script src="//maps.googleapis.com/maps/api/js?sensor=true"></script>
+<script>
+    function supports(bool, suffix) {
+        var s = "Your browser ";
+        if (bool) {
+            s += "supports " + suffix + ".";
+        } else {
+            s += "does not support " + suffix + ". :(";
+        }
+        return s;
+    }
+    function lookup_location() {
+        geoPosition.getCurrentPosition(show_map, show_map_error);
+    }
+    function show_map(loc) {
+        $("#geo-wrapper").css({ 'width': '320px', 'height': '350px' });
+        var map = new google.maps.Map(document.getElementById("geo-wrapper"), { zoom: 14, mapTypeControl: true, zoomControl: true, mapTypeId: google.maps.MapTypeId.ROADMAP });
+        var center = new google.maps.LatLng(loc.coords.latitude, loc.coords.longitude);
+        map.setCenter(center);
+        var marker = new google.maps.Marker({ map: map, position: center, draggable: false, title: "You are here (more or less)" });
+    }
+    function show_map_error() {
+        $("#live-geolocation").html('Unable to determine your location.');
+    }
+    $(function () {
+        if (geoPosition.init()) {
+            $("#live-geolocation").html(supports(true, "geolocation") + ' <a href="#" onclick="lookup_location();return false">Click to look up your location</a>.');
+        } else {
+            $("#live-geolocation").html(supports(false, "geolocation"));
+        }
+    });
+</script>
+</body>
+</html>

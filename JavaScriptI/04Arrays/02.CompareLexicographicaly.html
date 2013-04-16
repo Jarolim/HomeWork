@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Compare Lexicographicaly</title>
+    <!--Write a script that compares two char arrays lexicographically (letter by letter).-->
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+    <p>Write a script that compares two char arrays lexicographically (letter by letter).</p>
+	<a href="#" onclick="onButtonClick()">Compare Lexicographicaly</a>
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+    <script>
+        //Task starts here:
+        function onButtonClick() {
+            var firstArray = ["s", "a", "m", "u", "e", "l"];
+            var secondArray = new Array("s", "a", "m", "i")
+            var stop = firstArray.length;
+            if (secondArray.length < stop) {
+                stop = secondArray.length;
+            }
+            var bigger = false;
+            for (var i = 0; i < stop; i++) {
+                if (firstArray[i] < secondArray[i]) {
+                    jsConsole.writeLine("The first array  is lexicographicaly before the second array");
+                    bigger = true;
+                    break;
+                }
+                else if (secondArray[i] < firstArray[i]) {
+                    jsConsole.writeLine("The second array is lexicographicaly before the first array ");
+                    bigger = true;
+                    break;
+                }
+            }
+            if (bigger == false) {
+                if (firstArray.length < secondArray.length) {
+                    jsConsole.writeLine("The first array   is lexicographicali before  the second array");
+                }
+                else if (secondArray.length < firstArray.length) {
+                    jsConsole.writeLine("The second array is lexicographicaly before the first array ");
+                }
+                else {
+                    jsConsole.writeLine("The first array is same as the second array lexicogrphicaly ");
+                }
+            }
+        }
+    </script>	
+</body>
+</html>
+

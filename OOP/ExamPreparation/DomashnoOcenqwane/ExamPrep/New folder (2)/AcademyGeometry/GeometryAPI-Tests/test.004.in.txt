@@ -1,0 +1,20 @@
+4
+segment (0,0,0) (42,42,42)
+area
+measure
+end
+triangle (0,0,42) (42,42,42) (42,0,42)
+measure
+area
+volume
+measure
+measure
+end
+cylinder (-3,-3,-3) (-3,-3,0) 10
+center
+normal
+end
+circle (0,0,17.3) 1
+normal
+area
+end

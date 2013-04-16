@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobilePhoneDevice", "MobilePhoneDevice\MobilePhoneDevice.csproj", "{08975DFD-DF4F-4253-B0E8-A72834D906DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallHistoryTest", "CallHistoryTest\CallHistoryTest.csproj", "{EFA7D708-F632-453E-8198-89D7B069F9C1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08975DFD-DF4F-4253-B0E8-A72834D906DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08975DFD-DF4F-4253-B0E8-A72834D906DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08975DFD-DF4F-4253-B0E8-A72834D906DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08975DFD-DF4F-4253-B0E8-A72834D906DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFA7D708-F632-453E-8198-89D7B069F9C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFA7D708-F632-453E-8198-89D7B069F9C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFA7D708-F632-453E-8198-89D7B069F9C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFA7D708-F632-453E-8198-89D7B069F9C1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

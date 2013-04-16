@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Yongest person</title>
+    <!--Write a function that finds the youngest person in a given
+         array of persons and prints his/hers full name
+        Each person have properties firstname, lastname and age.-->
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+    <p>Write a function that finds the youngest person in a given
+         array of persons and prints his/hers full name
+        Each person have properties firstname, lastname and age.</p>
+	<!--<a href="#" onclick="onButtonClick()">Check!</a>-->
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+    <script>
+        function findYoungest(arr) {
+            var youngestPersonPosition = 0;
+            var youngestPersonAge = 200;
+
+            for (var i in arr) {
+                if (arr[i].age < youngestPersonAge) {
+                    youngestPersonAge = arr[i].age;
+                    youngestPersonPosition = i;
+                }
+            }
+            jsConsole.write("The youngest person is: ");
+            jsConsole.write(arr[youngestPersonPosition].firstname + " "
+                          + arr[youngestPersonPosition].lastname + " "
+                          + arr[youngestPersonPosition].age + " ");
+        }
+
+        var persons = [
+        { firstname: "Samuel", lastname: "Jackson", age: 46 },
+        { firstname: "Gugen", lastname: "Gugenheim", age: 81 },
+        { firstname: "Peter", lastname: "Parker", age: 55 }];
+
+        findYoungest(persons);
+    </script>
+</body>
+</html>

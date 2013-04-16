@@ -1,0 +1,9 @@
+2
+circle (42,42,42) 5
+volume
+end
+cylinder (6,0.5,3) (0,0,4) 1
+area
+volume
+normal
+end

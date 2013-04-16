@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    
+    <style>
+		
+	</style>
+</head>
+<body>
+    <script>
+        function Solve(args) {
+            //console.log(args);
+            var decimal = args[0];
+            var division = 1;
+            var remainder;
+            var converted = [];
+            var letters = [];
+
+            for (var j = 65; j < 91; j++) {
+                letters.push(String.fromCharCode(j));
+            }
+            for (var k = 97; k < 106; k++) {
+                for (var j = 65; j < 91; j++) {
+                    if (k == 105 && j == 87) {
+                        break;
+                    }
+                    letters.push(String.fromCharCode(k) + String.fromCharCode(j));
+                }
+            }
+
+            while (division > 0) {
+                division = parseInt(decimal / 256);
+                remainder = decimal % 256;
+                decimal = division;
+                converted.push(letters[remainder]);
+            }
+
+            if (args[0] > 255) {
+                converted.reverse();
+            }
+
+            converted = converted.join("");
+
+            console.log(converted);
+            return converted;
+        }
+
+        document.onload = Solve([1000]);
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+2
+triangle (0,1,0) (1,0,0) (0,0,0)
+center
+area
+scale (0,0,0) 2
+area
+rotate (0,0,0) 90
+center
+area
+translate (-1,-1,-1)
+center
+translate (1,1,1)
+area
+rotate (0,0,0) 90
+center
+scale (0,0,0) 0
+end
+circle (0,0,0) 5
+area
+rotate (10,5,0) 180
+center
+translate (-20,-10,10)
+center
+end
+

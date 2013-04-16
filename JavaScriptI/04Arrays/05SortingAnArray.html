@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Sorting an array</title>
+    <!--Sorting an array means to arrange its elements in increasing order.
+         Write a script to sort an array. Use the "selection sort" algorithm:
+         Find the smallest element, move it at the first position, find the
+         smallest from the rest, move it at the second position, etc.
+        Hint: Use a second array-->
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+    <p>Write a script to sort an array. Use the "selection sort" algorithm:
+         Find the smallest element, move it at the first position, find the
+         smallest from the rest, move it at the second position, etc.</p>
+	<a href="#" onclick="onButtonClick()">Sort the array!</a>
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+    <script>
+        function onButtonClick() {
+            var array = new Array(-9,8,55,51,498,-66,55,266,4);
+            for (var i = 0; (i < array.length - 1) ; i++) {
+                var small = array[i];
+                var count = i;
+                for (var j = i + 1; j < array.length; j++) {
+                    if (array[j] < small) {
+                        small = array[j];
+                        count = j;
+                    }
+                }
+                if (count != i) {
+                    array[count] = array[i];
+                    array[i] = small;
+                }
+            }
+            //Printing the sorted array
+            jsConsole.write("The sorted array is: {");
+            for (var i = 0; i < array.length - 1; i++) {
+                jsConsole.write(array[i] + ",");
+            }
+            jsConsole.write(array[array.length - 1] + "}");
+        }
+    </script>
+</body>
+</html>

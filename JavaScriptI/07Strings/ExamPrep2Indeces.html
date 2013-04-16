@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<script>
+    function Solve(args) {
+
+        //var args = [];
+
+        //var indicesLength = args[0];
+
+        //args[1] = "5 2 3 4"
+
+        var indices = args[1].split(' ');
+
+        var resultNumbers = [];
+
+        var visited = [];
+
+        var loopStartIndex = -1;
+
+        var currentIndex = 0;
+        while (currentIndex >=0 && currentIndex < indices.length) {
+            resultNumbers.push(currentIndex);
+            visited[currentIndex] = true;
+            //var nextIndex = indices[currentIndex];
+            //currentIndex = nextIndex;
+
+            currentIndex = indices[currentIndex];
+            if (visited[currentIndex] == true) {
+                for (var i = 0; i < resultNumbers.length; i++) {
+                    if (resultNumbers[i] == currentIndex) {
+                        loopStartIndex = i;
+                        break;
+                    }        
+                }
+                //!!!!!!!loopStartIndex = resultNumbers.indexOf(currentIndex);
+                break;
+            }
+        }
+
+        if (loopStartIndex != -1) {
+            var resultString = "";
+
+            
+            for (var i = 0; i < loopStartIndex-1; i++) {
+                resultString += resultNumbers[i] + " ";
+            }
+
+            if (loopStartIndex != 0) {
+                resultString += resultNumbers[loopStartIndex - 1] + "(";
+            }
+            else {
+                resultString += "(";
+            }
+            
+            //console.log(loopStartIndex);
+
+           //if (loopStartIndex != 0) {
+           //    resultString[resultString.length - 1]="(";
+           //}
+           //else {
+           //    resultString += "(";
+           //}
+
+            //console.log(resultString);
+
+            for (var i = loopStartIndex; i < resultNumbers.length-1; i++) {
+                resultString += resultNumbers[i] + " ";
+            }
+            resultString += resultNumbers[resultNumbers.length - 1] + ")";
+
+            return resultString;
+        }
+        else {
+            return resultNumbers.join(' ');
+        }
+        //console.log(resultNumbers.join(' '));
+        
+    }
+
+    function HandleSolveIO() {
+        var args = [];
+        args[0] = "6";
+        args[1] = "1 2 3 5 7 1";
+        console.log(Solve(args));
+    }
+
+</script>
+<body onload ="HandleSolveIO()">
+    
+</body>
+</html>

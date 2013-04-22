@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Rectangle Area</title>
+    <!--Write an expression that calculates rectangle’s area by given width and height.-->
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+    <label for="tb-width">Enter width: </label>
+	<input type="text" id="tb-width"/>
+	<br />
+    <label for="tb-height">Enter height: </label>
+	<input type="text" id="tb-height"/>
+	<br />
+	<a href="#" onclick="onFindAreaButtonClick()">Find rectangle's area!</a>
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+    <script>
+        function onFindAreaButtonClick() {
+            var width = jsConsole.readFloat("#tb-width");
+            var height = jsConsole.readFloat("#tb-height");
+            if (width > 0 && height > 0)
+                {
+                    var area = ((width) * (height));
+                    jsConsole.writeLine("The area of your rectangle is: " + area);
+                }
+            else
+                {
+                    jsConsole.writeLine("Invalid Input!");
+                }
+        }
+    </script>
+</body>
+</html>

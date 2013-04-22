@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Check if the Third Digit of a Number is 7</title>
+    <!--Write an expression that checks for given integer if its third digit (right-to-left) is 7. E. g. 1732  true.-->
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+    <label for="tb-number">Enter number: </label>
+	<input type="text" id="tb-number"/>
+	<br />
+	<a href="#" onclick="onFindThirdDigitClick()">Check!</a>
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">
+	</script>
+    <script>
+        function onFindThirdDigitClick() {
+            var number = Math.abs(jsConsole.readFloat("#tb-number"));
+            var check = Math.ceil(number / 100) - 1;
+            if (check % 10 == 7)
+                {
+                    jsConsole.writeLine("The Third Digit of the Number is 7");
+                }
+            else
+                {
+                    jsConsole.writeLine("The Third Digit of a Number is not 7");
+                }
+        }
+    </script>
+</body>
+</html>

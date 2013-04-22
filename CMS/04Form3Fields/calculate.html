@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>Calculate</title>
+</head>
+<body>
+			<form action="calculate.php" method="get">
+					<input type="text" id="numberOne" name="numberOne" placeholder="Enter a number" />
+					<input type="text" id="sign" name="sign" placeholder="Enter a sign" />
+					<input type="text" id="numberTwo" name="numberTwo" placeholder="Enter a number" />
+					<input type="submit" id="calc" value="Calculate" />
+			</form>
+		
+	<script>
+	    //JavaScript validation (comment the script if you want to test the php validation)
+			window.onload = function(){
+
+				document.getElementById('calc').onclick = function(){
+
+				var numberOne = document.getElementById('numberOne').value;
+				var sign = document.getElementById('sign').value;
+				var numberTwo = document.getElementById('numberTwo').value;
+
+				if (numberOne === '' || numberTwo  === '' || sign  === '') {
+					alert('Please fill the fields.');
+					return false;
+				}
+				else if (isNaN(numberOne) || isNaN(numberTwo)) {
+					alert('Please enter valid data (numbers).');
+					return false;
+				}
+				else if (sign !== '+' && sign !== '-' && sign !== '*' && sign !== '/') {
+					alert('Please enter valid sign.');
+					return false;
+				}
+				else{
+					return true;
+				}
+			}
+		}
+</script> 
+</body>
+</html>
